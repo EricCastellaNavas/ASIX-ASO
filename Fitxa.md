@@ -163,8 +163,7 @@ Per exemple:
 ```text
 Administració
     ├── Dídac
-    ├── Laia
-    └── Roser
+    └── Laia
 ```
 
 I podem donar permisos directament al conjunt:
@@ -173,27 +172,17 @@ I podem donar permisos directament al conjunt:
 Administració → carpeta_administracio → L/E
 ```
 
-### 6.1.
+### 6.1. Quin avantatge té aquesta solució respecte a donar permisos persona per persona?
 
-Quin avantatge té aquesta solució respecte a donar permisos persona per persona?
+Permet administrar els permisos de manera centralitzada. Un únic canvi aplicat al conjunt afecta totes les persones que en formen part, cosa que redueix el temps de gestió, els errors i els accessos indeguts.
 
----
+### 6.2. Si Dídac passa d'Administració a Producció musical, què caldria modificar?
 
----
+Només caldria retirar Dídac del conjunt d'Administració i afegir-lo al de Producció musical. Així perdria els permisos anteriors i rebria automàticament els del nou departament.
 
-### 6.2.
+### 6.3. Com anomenaries aquests conjunts de persones?
 
-Si Dídac passa d'Administració a Producció musical, què caldria modificar?
-
----
-
----
-
-### 6.3.
-
-Com anomenaries aquests conjunts de persones?
-
----
+Els anomenaria **grups d'usuaris** o **grups de seguretat**.
 
 ---
 
