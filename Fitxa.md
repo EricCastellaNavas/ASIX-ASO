@@ -226,22 +226,16 @@ Laia hauria de pertànyer al grup general `GG_Administracio` i a un altre grup e
 
 # 9. Un altre cas
 
-Diverses persones de departaments diferents participen temporalment en el projecte:
-
-```text
-Campanya Estiu
-```
+Diverses persones de departaments diferents participen temporalment en el projecte `Campanya Estiu`.
 
 Creus que hauríem de canviar-les de departament?
 
-☐ Sí  
-☐ No
+- [ ] Sí
+- [x] No
 
-Si no, com podríem donar-los accés als recursos del projecte?
+**Si no, com podríem donar-los accés als recursos del projecte?**
 
----
-
----
+Es podria crear el grup temporal `GG_Projecte_Campanya_Estiu`, assignar-li lectura i escriptura sobre la carpeta del projecte i afegir-hi només les persones participants. Quan el projecte acabés, se les retiraria del grup o es desactivaria el grup, sense modificar els seus departaments habituals.
 
 ---
 
