@@ -8,7 +8,7 @@
 
 MusicCloud necessita reorganitzar la seva infraestructura informàtica. Abans d'instal·lar o configurar cap servei, cal entendre:
 
-- qui treballa a l'empresa; 
+- qui treballa a l'empresa;
     
 - quines funcions té cada persona;
     
@@ -27,16 +27,25 @@ Consulta la informació disponible sobre els departaments, treballadors i perfil
 
 Completa la taula següent.
 
-|Persona|Departament|Funció / responsabilitat|Necessita privilegis especials? Per què?|
+| Persona | Departament | Funció / responsabilitat | Necessita privilegis especials? Per què? |
 |---|---|---|---|
-|||||
-|||||
-|||||
-|||||
-|||||
-|||||
-|||||
-|||||
+| Aina Ciurans | Direcció | Gestió general de l'empresa | Sí. Ha de poder gestionar els recursos de Direcció i consultar informació dels altres departaments. |
+| Rut Tornil | Direcció | Gestió general de l'empresa | Sí. Ha de poder gestionar els recursos de Direcció i consultar informació dels altres departaments. |
+| Dídac Gassó | Administració | Gestió de factures, contractes i documentació interna | No. Necessita els permisos habituals del departament d'Administració. |
+| Laia Macias | Administració | Cap d'Administració i responsable de la documentació del departament | Sí. Com a responsable, necessita accés complet a `gestio_departament`. |
+| Estel Birosta | Suport tècnic | Manteniment de sistemes i resolució d'incidències | Pot necessitar accessos temporals i registrats per resoldre incidències. |
+| Aina Zuriguel | Suport tècnic | Manteniment de sistemes i resolució d'incidències | Pot necessitar accessos temporals i registrats per resoldre incidències. |
+| Lluïsa Richart | Suport tècnic | Cap de Suport tècnic i coordinació d'incidències | Sí. Necessita accés complet a `gestio_departament` i als recursos tècnics del departament. |
+| Roser Alberch | Producció musical | Gestió de continguts musicals | No. Necessita els permisos habituals de Producció musical. |
+| Guillem Adella | Producció musical | Gestió de continguts musicals | No. Necessita els permisos habituals de Producció musical. |
+| Meritxell Reglat | Producció musical | Cap de Producció musical i coordinació del catàleg | Sí. Necessita accés complet a `gestio_departament`. |
+| Alícia Monclús | Producció musical | Gestió de continguts musicals | No. Necessita els permisos habituals de Producció musical. |
+| Carles Molins | Producció musical | Gestió de continguts musicals | No. Necessita els permisos habituals de Producció musical. |
+| Eulàlia Galcera | Producció musical | Gestió de continguts musicals | No. Necessita els permisos habituals de Producció musical. |
+| Talia Costas | Informàtica | Cap d'Informàtica i administració dels sistemes | Sí. Com a administradora, ha de gestionar usuaris, grups, permisos, còpies de seguretat, registres i configuracions. |
+| Alex Soriano | Informàtica | Administració i manteniment dels sistemes informàtics | Sí. Ha de gestionar els recursos tècnics necessaris per mantenir els sistemes. |
+| Pere Espinalt | Extern | Col·laborador temporal | Sí, però de manera restrictiva. Només ha d'accedir als recursos compartits que necessiti. |
+| Neus Bages | Extern | Col·laboradora temporal | Sí, però de manera restrictiva. Només ha d'accedir als recursos compartits que necessiti. |
 
 ### 1.1. Reflexió
 
