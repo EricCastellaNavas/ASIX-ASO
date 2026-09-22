@@ -211,20 +211,16 @@ Laia treballa al departament d'Administració, però també és la responsable d
 
 És suficient que pertanyi només al conjunt `Administració`?
 
-☐ Sí  
-☐ No
+- [ ] Sí
+- [x] No
 
-Per què?
+**Per què?**
 
----
+El conjunt `Administració` ha de donar els permisos comuns a tots els membres del departament, però Laia també necessita accedir a informació reservada de gestió. Si aquest privilegi es donés al grup general, Dídac també el rebria sense necessitar-lo.
 
----
+**Quina possible solució proposes?**
 
-Quina possible solució proposes?
-
----
-
----
+Laia hauria de pertànyer al grup general `GG_Administracio` i a un altre grup específic, com ara `GG_Responsables_Administracio`, amb lectura i escriptura sobre `administracio/gestio_departament`.
 
 ---
 
