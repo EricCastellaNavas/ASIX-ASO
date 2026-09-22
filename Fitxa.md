@@ -134,43 +134,23 @@ Es podria crear un conjunt per a cada departament o necessitat d'accés. Els per
 
 # 5. Canvis a MusicCloud
 
-Ara es produeixen aquests tres canvis:
+### Cas A: Dídac deixa Administració i passa a Producció musical
 
-### Cas A
+**Quins accessos hauria de perdre?**
 
-Dídac deixa Administració i passa a Producció musical.
+Hauria de perdre l'accés de lectura i escriptura a les carpetes `compartida` i `documentacio_interna` d'Administració. També hauria de deixar de rebre qualsevol permís associat exclusivament al seu departament anterior.
 
-Quins accessos hauria de perdre?
+**Quins accessos hauria d'obtenir?**
 
----
+Hauria d'obtenir lectura i escriptura a les carpetes `compartida`, `artistes` i `cataleg` de Producció musical. No hauria d'accedir a `gestio_departament`, perquè no és el responsable del nou departament.
 
-Quins accessos hauria d'obtenir?
+### Cas B: S'incorpora una nova treballadora al departament d'Administració
 
----
+Caldria crear-li un compte personal, una carpeta personal i assignar-li els accessos generals de l'empresa. També necessitaria lectura i escriptura a `administracio/compartida` i `administracio/documentacio_interna`. Si és una treballadora estàndard, no se li hauria de donar accés a `gestio_departament`.
 
----
+### Cas C: Pere Espinalt deixa de col·laborar amb MusicCloud
 
-### Cas B
-
-S'incorpora una nova treballadora al departament d'Administració.
-
-Quins accessos caldria configurar?
-
----
-
----
-
----
-
-### Cas C
-
-Pere Espinalt deixa de col·laborar amb MusicCloud.
-
-Què hauríem de fer amb els seus accessos?
-
----
-
----
+S'hauria de desactivar immediatament el seu compte i revocar tots els seus accessos. També caldria revisar les sessions o credencials actives, conservar només la informació empresarial necessària i, després del període establert per l'empresa, eliminar el compte si ja no és necessari.
 
 ---
 
