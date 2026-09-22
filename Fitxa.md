@@ -97,13 +97,9 @@ Per a cada situació, indica quin nivell d'accés consideres adequat.
 Imagina que MusicCloud té només quatre treballadors:
 
 - Anna
-    
 - Biel
-    
 - Carla
-    
 - David
-    
 
 Tots quatre treballen al mateix departament i necessiten accedir a la mateixa carpeta.
 
