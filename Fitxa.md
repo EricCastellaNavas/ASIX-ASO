@@ -265,17 +265,11 @@ Analitza aquesta afirmació:
 
 > Un usuari només hauria de tenir els permisos estrictament necessaris per realitzar la seva feina.
 
-Explica amb les teves paraules què significa.
+Aquesta regla significa que cada persona només ha de poder accedir als recursos i executar les accions imprescindibles per a les seves responsabilitats. No s'han de concedir permisos addicionals per comoditat, perquè augmentarien el risc d'errors, modificacions accidentals o accessos indeguts.
 
----
+**Exemple relacionat amb MusicCloud:**
 
----
-
-Posa un exemple relacionat amb MusicCloud.
-
----
-
----
+Dídac necessita lectura i escriptura a les carpetes compartides d'Administració, però no ha d'accedir a la carpeta de còpies de seguretat. Aquesta carpeta només l'ha d'administrar el personal d'Informàtica responsable del sistema.
 
 ---
 
