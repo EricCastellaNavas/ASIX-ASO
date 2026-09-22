@@ -272,31 +272,15 @@ Aquesta regla significa que cada persona només ha de poder accedir als recursos
 Dídac necessita lectura i escriptura a les carpetes compartides d'Administració, però no ha d'accedir a la carpeta de còpies de seguretat. Aquesta carpeta només l'ha d'administrar el personal d'Informàtica responsable del sistema.
 
 ---
-
 # 12. Pregunta final
 
 Imagina que demà MusicCloud passa de 14 treballadors a 500.
 
 Quina de les dues estratègies consideres més adequada?
 
-☐ Assignar permisos individualment a cada usuari.
+- [ ] Assignar permisos individualment a cada usuari.
+- [x] Organitzar els usuaris segons les seves necessitats i assignar permisos a aquests conjunts.
 
-☐ Organitzar els usuaris segons les seves necessitats i assignar permisos a aquests conjunts.
+**Justificació:**
 
-Justifica la resposta.
-
----
-
----
-
----
-
-Jo **no faria obligatori que acabessin tota la fitxa abans d'explicar res**. La utilitzaria de manera sincronitzada amb la classe:
-
-**0–40 min:** apartats 1–3 → analitzen MusicCloud i els accessos.  
-**40–65 min:** apartats 4–5 → apareix el problema de gestionar permisos individualment.  
-**65–85 min:** explicació curta de **usuari, grup, recurs, permís i mínim privilegi**.  
-**85–110 min:** apartats 6–9 → apliquen immediatament el concepte de grup.  
-**110–120 min:** apartats 10–12 → revisió i tancament.
-
-Hi ha una decisió pedagògica important: a l'apartat 4 **no utilitzo la paraula “grup” fins que l'alumnat ha intentat resoldre el problema**. Això encaixa molt millor amb el cicle que vols seguir: primer tenen el problema, després apareix la necessitat i només aleshores introdueixes el concepte teòric.
+La segona estratègia és més escalable, segura i fàcil de mantenir. Els permisos es defineixen una sola vegada per a cada grup i els treballadors només s'afegeixen o es retiren dels grups corresponents. Això simplifica les incorporacions, les baixes i els canvis de departament, evita configuracions repetides i redueix la possibilitat que una persona conservi permisos que ja no necessita.
