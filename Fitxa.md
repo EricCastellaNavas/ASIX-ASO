@@ -81,27 +81,14 @@ Classifica alguns dels recursos següents segons la seva finalitat.
 
 Per a cada situació, indica quin nivell d'accés consideres adequat.
 
-Utilitza:
-
-- **NA** → sense accés
-    
-- **L** → lectura
-    
-- **L/E** → lectura i escriptura
-    
-- **ADM** → administració
-    
-
-No busquis encara una solució tècnica. Pensa només en les necessitats de l'empresa.
-
-|Situació|Accés proposat|Justificació|
+| Situació | Accés proposat | Justificació |
 |---|---|---|
-|Dídac accedeix a la carpeta compartida d'Administració|||
-|Laia accedeix a la gestió del departament d'Administració|||
-|Pere, treballador extern, accedeix als comunicats interns|||
-|Talia accedeix als backups del sistema|||
-|Un membre de Producció musical accedeix a la carpeta d'Administració|||
-|Un participant de `campanya_estiu` accedeix als fitxers del projecte|||
+| Dídac accedeix a la carpeta compartida d'Administració | **L/E** | És membre d'Administració i necessita consultar, crear i modificar els documents del departament. |
+| Laia accedeix a la gestió del departament d'Administració | **L/E** | És la responsable d'Administració i ha de gestionar la documentació reservada del departament. |
+| Pere, treballador extern, accedeix als comunicats interns | **NA** | Els comunicats són informació interna i els usuaris externs no hi han d'accedir. |
+| Talia accedeix als backups del sistema | **ADM** | Com a responsable d'Informàtica, ha de gestionar les còpies de seguretat i el seu manteniment. |
+| Un membre de Producció musical accedeix a la carpeta d'Administració | **NA** | No necessita aquesta informació per desenvolupar la seva feina. |
+| Un participant de `campanya_estiu` accedeix als fitxers del projecte | **L/E** | Les persones assignades al projecte han de poder consultar i modificar els seus fitxers. |
 
 ---
 
