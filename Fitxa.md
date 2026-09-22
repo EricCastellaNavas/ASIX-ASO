@@ -241,31 +241,21 @@ Es podria crear el grup temporal `GG_Projecte_Campanya_Estiu`, assignar-li lectu
 
 # 10. Conclusions
 
-Completa les frases amb les teves paraules.
-
 ### Usuari
 
-Un usuari representa:
-
----
+Un usuari representa una persona o identitat que pot iniciar sessió al sistema i utilitzar els recursos que tingui autoritzats.
 
 ### Recurs
 
-Un recurs és:
-
----
+Un recurs és qualsevol element del sistema al qual es pot accedir, com ara una carpeta, un fitxer, una impressora, una aplicació o un servidor.
 
 ### Permís
 
-Un permís determina:
-
----
+Un permís determina quines accions pot fer un usuari o grup sobre un recurs, per exemple llegir-lo, modificar-lo o administrar-lo.
 
 ### Grup
 
-Un grup serveix per:
-
----
+Un grup serveix per reunir usuaris amb necessitats semblants i assignar-los permisos de manera conjunta.
 
 ---
 
