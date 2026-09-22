@@ -114,39 +114,21 @@ David → lectura/escriptura
 
 ### 4.1.
 
-Què passaria si l'empresa tingués **100 treballadors** amb el mateix tipus d'accés?
-
----
-
----
+Caldria assignar i revisar els mateixos permisos cent vegades. Seria un procés lent, repetitiu i difícil de controlar, amb més probabilitat de cometre errors.
 
 ### 4.2.
 
-Què passaria cada vegada que s'incorporés una persona nova?
-
----
-
----
+S'haurien de configurar manualment tots els permisos que necessita. També es podria oblidar algun recurs o assignar-li un accés incorrecte.
 
 ### 4.3.
 
-Què passaria quan una persona canviés de departament?
-
----
-
----
+Caldria eliminar un per un els permisos del departament anterior i assignar-li manualment els del nou. Si se n'oblidés algun, la persona podria conservar accessos que ja no necessita.
 
 ### 4.4.
 
 Proposa una manera de gestionar aquestes persones conjuntament.
 
-No cal que coneguis encara el nom tècnic de la solució.
-
----
-
----
-
----
+Es podria crear un conjunt per a cada departament o necessitat d'accés. Els permisos s'assignarien al conjunt i després només caldria afegir-hi o retirar-ne les persones corresponents.
 
 ---
 
