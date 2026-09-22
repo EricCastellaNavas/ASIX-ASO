@@ -192,13 +192,16 @@ A partir de l'organització de l'empresa, proposa els primers conjunts de person
 
 **No cal trobar encara la solució definitiva.**
 
-|Nom proposat|Qui hi pertanyeria?|Per què existeix aquest conjunt?|
+| Nom proposat | Qui hi pertanyeria? | Per què existeix aquest conjunt? |
 |---|---|---|
-||||
-||||
-||||
-||||
-||||
+| `GG_Direccio` | Aina Ciurans i Rut Tornil | Agrupa les persones de Direcció i facilita l'accés als recursos directius. |
+| `GG_Administracio` | Dídac Gassó i Laia Macias | Dona accés als recursos compartits d'Administració. |
+| `GG_Suport_Tecnic` | Estel Birosta, Aina Zuriguel i Lluïsa Richart | Dona accés als recursos de suport, incidències i eines pròpies del departament. |
+| `GG_Produccio_Musical` | Roser Alberch, Guillem Adella, Meritxell Reglat, Alícia Monclús, Carles Molins i Eulàlia Galcera | Dona accés als continguts, artistes i catàleg musical. |
+| `GG_Informatica` | Talia Costas i Alex Soriano | Agrupa el personal que administra i manté els sistemes informàtics. |
+| `GG_Externs` | Pere Espinalt i Neus Bages | Limita els col·laboradors externs als recursos compartits autoritzats. |
+| `GG_Caps_Departament` | Laia Macias, Lluïsa Richart, Meritxell Reglat i Talia Costas | Permet assignar accessos específics a les persones responsables dels departaments. |
+| `GG_Projecte_Campanya_Estiu` | Persones assignades temporalment al projecte | Dona accés al projecte sense modificar el departament habitual de cada participant. |
 
 ---
 
