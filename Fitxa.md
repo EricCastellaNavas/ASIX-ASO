@@ -8,7 +8,7 @@
 
 MusicCloud necessita reorganitzar la seva infraestructura informàtica. Abans d'instal·lar o configurar cap servei, cal entendre:
 
-- qui treballa a l'empresa;
+- qui treballa a l'empresa; 
     
 - quines funcions té cada persona;
     
