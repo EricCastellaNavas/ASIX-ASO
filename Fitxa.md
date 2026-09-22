@@ -49,24 +49,14 @@ Completa la taula següent.
 
 ### 1.1. Reflexió
 
-Quines diferències observes entre un **treballador**, un **departament** i una **funció o responsabilitat**?
-
----
-
----
-
----
+Un **treballador** és una persona concreta que forma part de l'empresa i disposa d'un compte d'usuari. Un **departament** és una unitat organitzativa que agrupa treballadors amb un àmbit de feina comú. Una **funció o responsabilitat** defineix les tasques que fa una persona i pot justificar que necessiti permisos diferents dels de la resta del seu departament.
 
 Hi ha persones que, pel seu càrrec o funció, necessiten accessos diferents dels altres membres del seu departament?
 
-☐ Sí  
-☐ No
+- [x] Sí
+- [ ] No
 
-Posa'n algun exemple:
-
----
-
----
+**Exemple:** Laia Macias és membre d'Administració, però també n'és la responsable. Per això, a més dels recursos compartits del departament, necessita accés de lectura i escriptura a la carpeta `gestio_departament`. Talia Costas també necessita privilegis d'administració perquè és la responsable d'Informàtica.
 
 ---
 
