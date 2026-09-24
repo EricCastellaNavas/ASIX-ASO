@@ -71,32 +71,15 @@ Cada treballador intern s'ubica a l'OU del seu departament habitual. Pere Espina
 
 # 4. Un mateix usuari: ubicació i pertinença
 
-Considera aquest cas:
+**Dídac Gassó** treballa a Administració i participa en el projecte Campanya Estiu.
 
-**Dídac Gassó**
+**En quina OU ubicaries el seu compte?** A `MusicCloud/Usuaris/Administracio`, que correspon al seu departament habitual.
 
-- treballa a Administració;
-    
-- participa en el projecte Campanya Estiu.
-    
-
-Indica:
-
-**En quina OU ubicaries el seu compte?**
-
----
-
-**A quins grups podria pertànyer?**
-
----
-
----
+**A quins grups podria pertànyer?** A `GG_Administracio` i `GG_Projecte_Campanya_Estiu`. Si hi ha un grup general de treballadors interns, també en podria ser membre. No necessita `GG_Responsables_Administracio`, perquè no és el cap del departament.
 
 ### Per què no és contradictori que estigui en una OU però pertanyi a diversos grups?
 
----
-
----
+L'OU indica **on s'administra el compte**; els grups indiquen **a quins recursos pot accedir**. Dídac continua treballant a Administració mentre participa en un projecte transversal. Quan acabi la campanya, n'hi haurà prou de retirar-lo del grup del projecte.
 
 ---
 
