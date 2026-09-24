@@ -93,24 +93,16 @@ Un **servei de directori** és un sistema centralitzat que organitza informació
 
 # 6. LDAP
 
-Completa les frases següents.
+**LDAP és:** Un protocol estàndard que permet consultar i modificar informació d'un directori, com ara usuaris, grups i atributs.
 
-**LDAP és:**
+**LDAP no és:** Un producte concret ni un sinònim d'Active Directory. Per si sol tampoc no constitueix tota la gestió de l'autenticació, les polítiques i els permisos.
 
----
-
-**LDAP no és:**
-
----
-
-Indica si les afirmacions són certes o falses.
-
-|Afirmació|C|F|
+| Afirmació | C | F |
 |---|:-:|:-:|
-|LDAP és sinònim d'Active Directory|☐|☐|
-|LDAP permet accedir i consultar informació d'un directori|☐|☐|
-|OpenLDAP és una implementació d'un servei de directori|☐|☐|
-|Active Directory utilitza LDAP, entre altres tecnologies|☐|☐|
+| LDAP és sinònim d'Active Directory | ☐ | ☑ |
+| LDAP permet accedir i consultar informació d'un directori | ☑ | ☐ |
+| OpenLDAP és una implementació d'un servei de directori | ☑ | ☐ |
+| Active Directory utilitza LDAP, entre altres tecnologies | ☑ | ☐ |
 
 ---
 
