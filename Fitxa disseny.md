@@ -12,11 +12,11 @@ Aquesta fitxa forma part de la **documentació de disseny del sistema**. Les dec
 |---|---|
 | Usuaris | Dídac Gassó, Laia Macias, Talia Costas i els col·laboradors externs Pere Espinalt i Neus Bages. |
 | Grups | `GG_Administracio`, `GG_Informatica`, `GG_Externs` i `GG_Projecte_Campanya_Estiu`. |
-| Equips | Ordinadors dels treballadors d'Administració, Producció musical i Informàtica. |
+| Equips | Ordinadors de sobretaula i portàtils dels treballadors; el model de classe també identifica mòbils i impressores. |
 | Servidors | Servidor de fitxers, d'aplicacions i controlador de domini, quan s'implantin. |
 | Comptes d'aplicacions o serveis | Comptes propis de l'aplicació, de les còpies de seguretat i d'altres tasques automàtiques. |
 
-**Hi afegiria algun altre tipus d'objecte?** Si s'utilitzen, es poden registrar impressores compartides i altres recursos de xarxa. També caldrà gestionar les polítiques de grup (GPO) per configurar usuaris i equips.
+**Hi afegiria algun altre tipus d'objecte?** El dibuix de classe també enumera elements de **xarxa** (encaminadors, commutadors, tallafocs, NAS i SAI) i **programari**. Cal inventariar-los i gestionar-los, però no tots es representen necessàriament com a objectes o OU d'un directori Active Directory. Les impressores compartides es poden publicar al directori; els mòbils es gestionaran segons si la solució escollida permet integrar-los-hi.
 
 ---
 
