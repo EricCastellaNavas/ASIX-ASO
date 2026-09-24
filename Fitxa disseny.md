@@ -22,25 +22,28 @@ Aquesta fitxa forma part de la **documentació de disseny del sistema**. Les dec
 
 # 2. Organització mitjançant unitats organitzatives
 
-Proposa les **unitats organitzatives (OU)** principals que utilitzaries a MusicCloud.
-
-|OU|Què contindrà?|Per què la crees?|
+| OU | Què contindrà? | Per què la crees? |
 |---|---|---|
-||||
-||||
-||||
-||||
-||||
+| `Usuaris` | Comptes personals, subdividits per departament i en `Externs`. | Gestionar incorporacions, baixes i polítiques segons el tipus de persona. |
+| `Grups` | Grups de departaments, projectes i funcions. | Localitzar i mantenir els grups de seguretat. |
+| `Equips` | Ordinadors clients dels treballadors. | Aplicar configuracions pròpies dels llocs de treball. |
+| `Servidors` | Comptes dels equips que fan de servidors. | Aplicar controls i configuracions diferents dels clients. |
+| `Comptes_Servei` | Identitats d'aplicacions i processos automàtics. | Controlar separadament els seus permisos i credencials. |
 
 ## 2.1. Organització dels usuaris
 
-Dibuixa l'estructura que utilitzaries per organitzar els usuaris de MusicCloud.
-
 ```text
 MusicCloud
-│
-└──
+└── Usuaris
+    ├── Direccio
+    ├── Administracio
+    ├── Suport_Tecnic
+    ├── Produccio_Musical
+    ├── Informatica
+    └── Externs
 ```
+
+Cada treballador intern s'ubica a l'OU del seu departament habitual. Pere Espinalt i Neus Bages s'ubiquen a `Externs` perquè la seva col·laboració és externa i temporal.
 
 ---
 
