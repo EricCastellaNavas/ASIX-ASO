@@ -26,9 +26,11 @@ Aquesta fitxa forma part de la **documentació de disseny del sistema**. Les dec
 |---|---|---|
 | `Usuaris` | Comptes personals, subdividits per departament i en `Externs`. | Gestionar incorporacions, baixes i polítiques segons el tipus de persona. |
 | `Grups` | Grups de departaments, projectes i funcions. | Localitzar i mantenir els grups de seguretat. |
-| `Equips` | Ordinadors clients dels treballadors. | Aplicar configuracions pròpies dels llocs de treball. |
-| `Servidors` | Comptes dels equips que fan de servidors. | Aplicar controls i configuracions diferents dels clients. |
+| `Equips` | Equips de sobretaula i portàtils, subdividits per tipus. | Seguir l'esquema de classe i aplicar configuracions pròpies dels clients. |
+| `Equips/Servidors` | Comptes dels equips que fan de servidors. | Seguir l'esquema de classe i aplicar-los controls diferents dels clients. |
 | `Comptes_Servei` | Identitats d'aplicacions i processos automàtics. | Controlar separadament els seus permisos i credencials. |
+
+En la representació general de classe, `Equips` inclou també **impressores** i **mòbils**. Els mostrem al disseny com a categories previstes; la seva presència real dins del directori dependrà de com s'implantin. Els dispositius de xarxa i el programari es documentaran en un inventari tècnic.
 
 ## 2.1. Organització dels usuaris
 
