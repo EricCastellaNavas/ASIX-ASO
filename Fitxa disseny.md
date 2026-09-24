@@ -51,31 +51,21 @@ Cada treballador intern s'ubica a l'OU del seu departament habitual. Pere Espina
 
 # 3. OU o grup?
 
-Indica quina opció utilitzaries principalment en cada cas.
-
-|Necessitat|OU|Grup|
+| Necessitat | OU | Grup |
 |---|:-:|:-:|
-|Organitzar els treballadors d'Administració|☐|☐|
-|Donar accés a la carpeta d'Administració|☐|☐|
-|Organitzar els ordinadors clients|☐|☐|
-|Identificar les persones que participen en Campanya Estiu|☐|☐|
-|Organitzar els servidors|☐|☐|
-|Donar privilegis als administradors del sistema|☐|☐|
-|Organitzar els comptes utilitzats per aplicacions|☐|☐|
+| Organitzar els treballadors d'Administració | ☑ | ☐ |
+| Donar accés a la carpeta d'Administració | ☐ | ☑ |
+| Organitzar els ordinadors clients | ☑ | ☐ |
+| Identificar les persones que participen en Campanya Estiu | ☐ | ☑ |
+| Organitzar els servidors | ☑ | ☐ |
+| Donar privilegis als administradors del sistema | ☐ | ☑ |
+| Organitzar els comptes utilitzats per aplicacions | ☑ | ☐ |
 
-### Explica amb les teves paraules la diferència principal entre una OU i un grup.
+### Explica amb les teves paraules la diferència principal entre una OU i un grup
 
-**OU:**
+**OU:** És una divisió de l'arbre del directori que serveix per col·locar i administrar objectes i aplicar-los polítiques. El compte d'una persona ocupa una ubicació dins d'aquest arbre.
 
----
-
----
-
-**Grup:**
-
----
-
----
+**Grup:** És un conjunt d'identitats que comparteixen permisos o una funció. Tal com indica l'esquema de classe, els **grups serveixen per assignar permisos**. Una persona pot pertànyer simultàniament a diversos grups sense canviar d'OU.
 
 ---
 
