@@ -85,17 +85,9 @@ L'OU indica **on s'administra el compte**; els grups indiquen **a quins recursos
 
 # 5. Servei de directori
 
-Explica breument què entens per **servei de directori**.
+Un **servei de directori** és un sistema centralitzat que organitza informació sobre usuaris, grups, equips i altres objectes d'una xarxa. Permet trobar-los i gestionar les identitats des d'un lloc comú.
 
----
-
----
-
-Quin problema resol a MusicCloud?
-
----
-
----
+**Quin problema resol a MusicCloud?** Evita mantenir comptes i accessos de manera independent a cada equip o recurs. Quan algú entra a l'empresa, canvia de funció o se'n va, Informàtica pot actualitzar el compte i els grups corresponents de manera coherent.
 
 ---
 
