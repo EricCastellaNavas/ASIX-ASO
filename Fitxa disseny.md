@@ -108,31 +108,38 @@ Un **servei de directori** és un sistema centralitzat que organitza informació
 
 # 7. DIT de MusicCloud
 
-Dibuixa la proposta final de **Directory Information Tree (DIT)** de MusicCloud.
-
-Ha de mostrar, com a mínim:
-
-- usuaris;
-    
-- grups;
-    
-- equips;
-    
-- servidors;
-    
-- comptes d'aplicacions o serveis;
-    
-- les subdivisions que consideris necessàries.
-    
+Aquesta és la proposta d'arbre lògic. Els servidors i comptes de servei que hi apareixen són exemples de la futura implantació.
 
 ```text
 MusicCloud
-│
-│
-│
-│
-│
+├── Usuaris
+│   ├── Direccio                 (Aina Ciurans, Rut Tornil)
+│   ├── Administracio            (Dídac Gassó, Laia Macias)
+│   ├── Suport_Tecnic            (Estel Birosta, Aina Zuriguel,
+│   │                             Lluïsa Richart)
+│   ├── Produccio_Musical        (Roser Alberch, Guillem Adella,
+│   │                             Meritxell Reglat, Alícia Monclús,
+│   │                             Carles Molins, Eulàlia Galcera)
+│   ├── Informatica              (Talia Costas, Alex Soriano)
+│   └── Externs                  (Pere Espinalt, Neus Bages)
+├── Grups
+│   ├── Departaments             (GG_Direccio, GG_Administracio,
+│   │                             GG_Suport_Tecnic, GG_Produccio_Musical,
+│   │                             GG_Informatica, GG_Externs)
+│   ├── Projectes                (GG_Projecte_Campanya_Estiu)
+│   └── Funcions                 (GG_Caps_Departament,
+│                                 GG_Responsables_Administracio,
+│                                 GG_Administradors_Sistema)
+├── Equips
+│   ├── Sobretaula              (clients fixos)
+│   ├── Portatils                (clients portàtils)
+│   ├── Servidors                (fitxers, aplicacions i domini)
+│   ├── Impressores              (si es publiquen al directori)
+│   └── Mobils                   (si s'integren en la solució)
+└── Comptes_Servei               (aplicació i còpies de seguretat)
 ```
+
+Les carpetes compartides són recursos als quals s'assignaran permisos mitjançant grups; no són subdivisions d'aquest arbre d'objectes. L'apartat **Xarxa** i el de **Programari** que apareixen a la pissarra descriuen altres àrees que cal inventariar i administrar; aquest DIT se centra en els objectes que la fitxa demana organitzar dins del servei de directori.
 
 ---
 
