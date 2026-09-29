@@ -161,27 +161,20 @@ Crear grups diferents per departament, projecte i funció especial.
 
 # 9. Comprovació final
 
-Respon breument.
-
 ### a) Per què no seria una bona idea guardar tots els usuaris, grups, equips i servidors al mateix nivell sense organitzar-los?
 
----
-
----
+Seria difícil trobar objectes, revisar comptes i aplicar configuracions diferents a persones, ordinadors i servidors. A mesura que l'empresa creixés augmentarien els errors.
 
 ### b) Per què no hauríem d'utilitzar les OU per substituir els grups de permisos?
 
----
-
----
+Les OU ordenen objectes i ajuden a administrar-los. Per donar accés als recursos fem servir grups de seguretat: una persona pot necessitar permisos de diversos projectes i funcions sense canviar constantment de lloc a l'arbre.
 
 ### c) Si MusicCloud passa de 14 a 500 treballadors, quina característica del disseny que has fet avui facilitarà més l'administració?
 
----
+L'estructura d'OU combinada amb permisos assignats a grups. Les OU permeten organitzar i aplicar polítiques per àrees; els grups fan possible donar o retirar permisos canviant la pertinença d'una persona, sense configurar cada accés individualment.
 
 ---
 
----
 
 # Documentació final del sistema
 
