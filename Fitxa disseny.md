@@ -145,27 +145,17 @@ Les carpetes compartides són recursos als quals s'assignaran permisos mitjança
 
 # 8. Justificació del disseny
 
-Escull **dues decisions** del teu DIT que consideris importants i justifica-les.
-
 ### Decisió 1
 
----
+Separar els comptes personals per departament i reservar una OU pròpia per a `Externs`.
 
-**Justificació:**
-
----
-
----
+**Justificació:** Facilita les altes i baixes i permet aplicar als col·laboradors externs polítiques més restrictives, com una durada limitada del compte. La ubicació reflecteix la relació habitual de la persona amb MusicCloud.
 
 ### Decisió 2
 
----
+Crear grups diferents per departament, projecte i funció especial.
 
-**Justificació:**
-
----
-
----
+**Justificació:** Podem assignar l'accés a les carpetes als grups. Dídac accedeix a Administració i a Campanya Estiu sense duplicar el compte; Laia pot rebre permisos de responsable sense concedir-los a tot el departament.
 
 ---
 
