@@ -175,25 +175,37 @@ L'estructura d'OU combinada amb permisos assignats a grups. Les OU permeten orga
 
 ---
 
-
 # Documentació final del sistema
-
-A partir de les decisions preses durant la sessió, deixa definida la proposta que utilitzarem inicialment per a MusicCloud.
 
 ## Estructura d'unitats organitzatives
 
 ```text
 MusicCloud
-│
-│
-│
-│
+├── Usuaris
+│   ├── Direccio
+│   ├── Administracio
+│   ├── Suport_Tecnic
+│   ├── Produccio_Musical
+│   ├── Informatica
+│   └── Externs
+├── Grups
+│   ├── Departaments
+│   ├── Projectes
+│   └── Funcions
+├── Equips
+│   ├── Sobretaula
+│   ├── Portatils
+│   ├── Servidors
+│   ├── Impressores
+│   └── Mobils
+└── Comptes_Servei
 ```
 
 ## Criteri utilitzat per organitzar els objectes
 
----
-
----
+Primer se separen els objectes pel tipus: persones, grups, equips i comptes de servei. Els usuaris interns s'agrupen pel departament habitual i els externs es gestionen a part. Els grups es classifiquen per departament, projecte o funció. Dins d'Equips se segueix el criteri de la pissarra: sobretaula, portàtils, servidors, impressores i mòbils. Els dos últims només figuraran al directori si la implantació ho permet. Els elements de xarxa i el programari tindran un inventari propi.
 
 ## Criteri utilitzat per diferenciar OU i grups
+
+Les **OU** indiquen la ubicació administrativa dels objectes i permeten aplicar polítiques. Els **grups** representen les necessitats d'accés i es poden associar a carpetes, aplicacions o privilegis. Un usuari ocupa una OU i pot pertànyer a tots els grups que necessiti per a la seva feina.
+
