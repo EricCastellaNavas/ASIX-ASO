@@ -1,0 +1,57 @@
+## 19. General
+
+PowerShell 7.6.5 | 2026-10-19 15:53:23 +02:00
+
+
+De menor a major
+PS> $ports = 21, 443, 80, 22, 3306, 3389
+$ports | Sort-Object
+21
+22
+80
+443
+3306
+3389
+
+
+De major a menor
+PS> $ports | Sort-Object -Descending
+3389
+3306
+443
+80
+22
+21
+
+
+Tres més grans
+PS> $ports | Sort-Object -Descending | Select-Object -First 3
+3389
+3306
+443
+
+
+Tres més petits
+PS> $ports | Sort-Object | Select-Object -First 3
+21
+22
+80
+
+
+Tres més grans guardats
+PS> $tresMesGrans = $ports | Sort-Object -Descending | Select-Object -First 3
+$tresMesGrans
+3389
+3306
+443
+
+
+Nombre de ports
+PS> $ports | Measure-Object
+Count             : 6
+Average           :
+Sum               :
+Maximum           :
+Minimum           :
+StandardDeviation :
+Property          :
