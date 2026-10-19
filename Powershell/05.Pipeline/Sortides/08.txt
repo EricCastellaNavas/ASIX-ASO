@@ -1,0 +1,36 @@
+## 8. Arrays
+
+PowerShell 7.6.5 | 2026-10-19 15:50:17 +02:00
+
+
+Ordre original
+PS> $servidors = "SRV04", "SRV01", "SRV03", "SRV02"
+$servidors
+SRV04
+SRV01
+SRV03
+SRV02
+
+
+Ordre ascendent
+PS> $servidors | Sort-Object
+SRV01
+SRV02
+SRV03
+SRV04
+
+
+Comprovació de l'origen
+PS> $servidors
+SRV04
+SRV01
+SRV03
+SRV02
+
+
+Ordre invers
+PS> $servidors | Sort-Object -Descending
+SRV04
+SRV03
+SRV02
+SRV01
