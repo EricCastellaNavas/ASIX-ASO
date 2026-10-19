@@ -1,0 +1,29 @@
+## 15. El pipeline no modifica necessàriament l'origen
+
+PowerShell 7.6.5 | 2026-10-19 15:52:46 +02:00
+
+
+Resultat ordenat
+PS> $numeros = 40, 10, 30, 20
+$numeros | Sort-Object
+10
+20
+30
+40
+
+
+Variable original
+PS> $numeros
+40
+10
+30
+20
+
+
+Resultat guardat
+PS> $numerosOrdenats = $numeros | Sort-Object
+$numerosOrdenats
+10
+20
+30
+40
