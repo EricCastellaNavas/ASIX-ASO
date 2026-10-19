@@ -1,0 +1,43 @@
+## 9. Ports
+
+PowerShell 7.6.5 | 2026-10-19 15:50:22 +02:00
+
+
+Ordre original
+PS> $ports = 443, 22, 8080, 80, 3389
+$ports
+443
+22
+8080
+80
+3389
+
+
+De menor a major
+PS> $ports | Sort-Object
+22
+80
+443
+3389
+8080
+
+
+De major a menor
+PS> $ports | Sort-Object -Descending
+8080
+3389
+443
+80
+22
+
+
+Dos més petits
+PS> $ports | Sort-Object | Select-Object -First 2
+22
+80
+
+
+Dos més grans
+PS> $ports | Sort-Object -Descending | Select-Object -First 2
+8080
+3389
