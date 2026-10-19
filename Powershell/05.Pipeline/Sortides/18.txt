@@ -1,0 +1,53 @@
+## 18. Descoberta
+
+PowerShell 7.6.5 | 2026-10-19 15:53:04 +02:00
+
+
+Ajuda local de Sort-Object
+PS> Get-Help Sort-Object -Examples
+NAME
+    Sort-Object
+
+ALIASES
+    sort
+
+
+REMARKS
+    Get-Help cannot find the Help files for this cmdlet on this computer. It is displaying only partial help.
+        -- To download and install Help files for the module that includes this cmdlet, use Update-Help.
+        -- To view the Help topic for this cmdlet online, type: "Get-Help Sort-Object -Online" or
+           go to https://go.microsoft.com/fwlink/?LinkID=2097038.
+
+
+Exemple de prova per ordenar
+PS> 3, 1, 2 | Sort-Object
+1
+2
+3
+
+
+Ajuda local de Measure-Object
+PS> Get-Help Measure-Object -Examples
+NAME
+    Measure-Object
+
+ALIASES
+    measure
+
+
+REMARKS
+    Get-Help cannot find the Help files for this cmdlet on this computer. It is displaying only partial help.
+        -- To download and install Help files for the module that includes this cmdlet, use Update-Help.
+        -- To view the Help topic for this cmdlet online, type: "Get-Help Measure-Object -Online" or
+           go to https://go.microsoft.com/fwlink/?LinkID=2096617.
+
+
+Exemple de prova per comptar
+PS> 1, 2, 3 | Measure-Object
+Count             : 3
+Average           :
+Sum               :
+Maximum           :
+Minimum           :
+StandardDeviation :
+Property          :
