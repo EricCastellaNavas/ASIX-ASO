@@ -1,0 +1,27 @@
+## 13. Predir abans d'executar
+
+PowerShell 7.6.5 | 2026-10-19 15:52:10 +02:00
+
+
+Comprovació A
+PS> 10, 5, 20, 2 | Sort-Object
+2
+5
+10
+20
+
+
+Comprovació B
+PS> 10, 5, 20, 2 |
+    Sort-Object -Descending |
+    Select-Object -First 2
+20
+10
+
+
+Comprovació C
+PS> "PC03", "PC01", "PC04", "PC02" |
+    Sort-Object |
+    Select-Object -First 2
+PC01
+PC02
