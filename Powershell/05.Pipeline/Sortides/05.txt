@@ -1,0 +1,29 @@
+## 5. Canviar l'ordre del pipeline
+
+PowerShell 7.6.5 | 2026-10-19 15:49:20 +02:00
+
+
+Primer ordenar
+PS> Get-Process |
+    Sort-Object CPU -Descending |
+    Select-Object -First 5
+NPM(K)    PM(M)      WS(M)     CPU(s)      Id  SI ProcessName
+ ------    -----      -----     ------      --  -- -----------
+    105 1.009,73     807,27   1.271,00    4292   3 firefox
+    234   704,02     684,41     883,38    9256   3 firefox
+    152   919,46     852,31     674,62   27416   3 firefox
+    157 1.018,82   1.031,80     451,14   24556   3 firefox
+     35   271,99     197,18     262,08   11172   3 wallpaper32
+
+
+Primer seleccionar
+PS> Get-Process |
+    Select-Object -First 5 |
+    Sort-Object CPU -Descending
+NPM(K)    PM(M)      WS(M)     CPU(s)      Id  SI ProcessName
+ ------    -----      -----     ------      --  -- -----------
+     48    52,21      96,35      33,05   18020   3 1Password
+     16    12,05      40,80       3,86   19208   3 1Password
+     11     2,29      16,38       2,14   23212   3 1Password-Crash-Handler
+     16     4,54      22,14       0,86    7872   3 1Password-BrowserSupport
+     20    63,21      53,39       0,39   24724   3 1Password
