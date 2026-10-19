@@ -1,0 +1,36 @@
+## 14. Què circula pel pipeline?
+
+PowerShell 7.6.5 | 2026-10-19 15:52:15 +02:00
+
+
+Nombres
+PS> 1, 2, 3, 4, 5 | Measure-Object
+Count             : 5
+Average           :
+Sum               :
+Maximum           :
+Minimum           :
+StandardDeviation :
+Property          :
+
+
+Textos
+PS> "Anna", "Joan", "Marta" | Measure-Object
+Count             : 3
+Average           :
+Sum               :
+Maximum           :
+Minimum           :
+StandardDeviation :
+Property          :
+
+
+Serveis
+PS> Get-Service | Measure-Object
+Count             : 314
+Average           :
+Sum               :
+Maximum           :
+Minimum           :
+StandardDeviation :
+Property          :
