@@ -1,0 +1,43 @@
+## 7. Modificar progressivament una ordre
+
+PowerShell 7.6.5 | 2026-10-19 15:50:12 +02:00
+
+
+Pas 1: veure els elements
+PS> Get-ChildItem
+Directory: C:\Users\01cas\Documents\Codex\2026-10-15\pots-accedir-al-meu-prjecta-de\work\pipeline-practica-2026-10-19
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----          19/10/2026    15:43                Arxiu
+-a---          19/10/2026    15:43            512 aplicacio.log
+-a---          19/10/2026    15:43             80 config.ini
+-a---          19/10/2026    15:43           2048 copia.bak
+-a---          19/10/2026    15:43            200 dades.csv
+-a---          19/10/2026    15:43             20 notes.txt
+
+
+Pas 2: ordenar els fitxers
+PS> Get-ChildItem -File | Sort-Object Length -Descending
+Directory: C:\Users\01cas\Documents\Codex\2026-10-15\pots-accedir-al-meu-prjecta-de\work\pipeline-practica-2026-10-19
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---          19/10/2026    15:43           2048 copia.bak
+-a---          19/10/2026    15:43            512 aplicacio.log
+-a---          19/10/2026    15:43            200 dades.csv
+-a---          19/10/2026    15:43             80 config.ini
+-a---          19/10/2026    15:43             20 notes.txt
+
+
+Pas 3: conservar els tres primers
+PS> Get-ChildItem -File |
+    Sort-Object Length -Descending |
+    Select-Object -First 3
+Directory: C:\Users\01cas\Documents\Codex\2026-10-15\pots-accedir-al-meu-prjecta-de\work\pipeline-practica-2026-10-19
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---          19/10/2026    15:43           2048 copia.bak
+-a---          19/10/2026    15:43            512 aplicacio.log
+-a---          19/10/2026    15:43            200 dades.csv
