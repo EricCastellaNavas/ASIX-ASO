@@ -6,7 +6,6 @@ foreach ($proces in $processos) {
     Write-Output "============================== $($proces.ProcessName) ($($proces.Id)) =============================="
     Write-Output ''
 
-    # Un procés pot acabar mentre recorro la llista.
     try {
         $fils = @($proces.Threads)
     } catch {
@@ -20,7 +19,7 @@ foreach ($proces in $processos) {
     Write-Output ''
 
     foreach ($fil in $fils) {
-        # Alguns fils no permeten consultar el temps de processador.
+
         try {
             $tempsCPU = $fil.TotalProcessorTime
             if ($null -eq $tempsCPU) {

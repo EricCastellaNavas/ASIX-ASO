@@ -1,6 +1,5 @@
 #requires -Version 7.0
 
-# Consulto la carpeta actual, sense entrar a les subcarpetes.
 $elements = @(Get-ChildItem -Force)
 $fitxers = @($elements | Where-Object { -not $_.PSIsContainer })
 

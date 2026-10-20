@@ -1,6 +1,5 @@
 #requires -Version 7.0
 
-# Recullo les dades abans de mostrar-les.
 $nomEquip = $env:COMPUTERNAME
 $usuariActual = $env:USERNAME
 $versioPowerShell = $PSVersionTable.PSVersion.ToString()
