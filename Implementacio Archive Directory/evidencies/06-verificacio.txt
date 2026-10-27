@@ -1,0 +1,346 @@
+La transcripción ha comenzado. El archivo de salida es C:\MusicCloudLab\06-verificacio.txt
+DATA I HORA
+2026-10-27T17:43:04.6294288+01:00
+
+
+Id          : Romance Standard Time
+DisplayName : (UTC+01:00) Bruselas, Copenhague, Madrid, París
+
+
+
+NOM I ROL DEL SERVIDOR
+SRV-AD-01
+
+
+Name       : SRV-AD-01
+Domain     : musiccloud.local
+DomainRole : 5
+
+
+
+
+
+Caption        : Microsoft Windows Server 2022 Standard Evaluation
+LastBootUpTime : 27/10/2026 17:27:30
+
+
+
+XARXA FIXA
+
+InterfaceAlias              IPAddress      PrefixLength PrefixOrigin
+--------------              ---------      ------------ ------------
+Ethernet 2                  192.168.56.109           24       Manual
+Ethernet                    10.0.2.15                24       Manual
+Loopback Pseudo-Interface 1 127.0.0.1                 8    WellKnown
+
+
+
+InterfaceAlias                  Dhcp ConnectionState
+--------------                  ---- ---------------
+Ethernet 2                  Disabled       Connected
+Ethernet                    Disabled       Connected
+Loopback Pseudo-Interface 1 Disabled       Connected
+
+
+
+InterfaceAlias NextHop
+-------------- -------
+Ethernet       10.0.2.2
+
+
+
+InterfaceAlias              ServerAddresses
+--------------              ---------------
+Ethernet                    {192.168.56.109}
+Ethernet 2                  {192.168.56.109}
+Loopback Pseudo-Interface 1 {}
+
+
+ROLS I EINES
+
+Name               InstallState
+----               ------------
+AD-Domain-Services    Installed
+DNS                   Installed
+GPMC                  Installed
+RSAT-AD-Tools         Installed
+RSAT-AD-PowerShell    Installed
+RSAT-DNS-Server       Installed
+
+
+
+Name                   Source
+----                   ------
+Get-ADDomain           ActiveDirectory
+Get-ADForest           ActiveDirectory
+Get-ADDomainController ActiveDirectory
+Get-ADUser             ActiveDirectory
+
+
+DOMINI I BOSC
+
+
+DNSRoot           : musiccloud.local
+NetBIOSName       : MUSICCLOUD
+DomainMode        : Windows2016Domain
+DistinguishedName : DC=musiccloud,DC=local
+PDCEmulator       : SRV-AD-01.musiccloud.local
+
+
+
+
+
+RootDomain     : musiccloud.local
+ForestMode     : Windows2016Forest
+GlobalCatalogs : {SRV-AD-01.musiccloud.local}
+
+
+
+
+
+HostName             : SRV-AD-01.musiccloud.local
+Domain               : musiccloud.local
+Forest               : musiccloud.local
+IPv4Address          : 192.168.56.109
+IsGlobalCatalog      : True
+IsReadOnly           : False
+OperationMasterRoles : {SchemaMaster, DomainNamingMaster, PDCEmulator, RIDMaster...}
+
+
+
+SERVEIS I CARPETES COMPARTIDES
+
+Name      Status StartType
+----      ------ ---------
+ADWS     Running Automatic
+DFSR     Running Automatic
+DNS      Running Automatic
+Kdc      Running Automatic
+Netlogon Running Automatic
+NTDS     Running Automatic
+sshd     Running Automatic
+
+
+
+Name     Path
+----     ----
+NETLOGON C:\Windows\SYSVOL\sysvol\musiccloud.local\SCRIPTS
+SYSVOL   C:\Windows\SYSVOL\sysvol
+
+
+ZONES, INTERFICIES I REENVIADORS DNS
+
+ZoneName                ZoneType IsDsIntegrated DynamicUpdate
+--------                -------- -------------- -------------
+_msdcs.musiccloud.local Primary            True Secure
+0.in-addr.arpa          Primary           False None
+127.in-addr.arpa        Primary           False None
+255.in-addr.arpa        Primary           False None
+56.168.192.in-addr.arpa Primary            True Secure
+musiccloud.local        Primary            True Secure
+
+
+
+
+ListeningIPAddress : {192.168.56.109}
+
+
+
+
+
+IPAddress   : 10.0.2.3
+UseRootHint : True
+
+
+
+RESOLUCIO DEL DOMINI
+
+Name             Type IPAddress
+----             ---- ---------
+musiccloud.local    A 192.168.56.109
+
+
+RESOLUCIO DEL CONTROLADOR
+
+Name                       Type IPAddress
+----                       ---- ---------
+SRV-AD-01.musiccloud.local    A 192.168.56.109
+
+
+REGISTRES SRV LDAP I KERBEROS
+
+Name                                  Type NameTarget                 Port
+----                                  ---- ----------                 ----
+_ldap._tcp.dc._msdcs.musiccloud.local  SRV srv-ad-01.musiccloud.local  389
+srv-ad-01.musiccloud.local               A
+
+
+
+Name                            Type NameTarget                 Port
+----                            ---- ----------                 ----
+_kerberos._tcp.musiccloud.local  SRV srv-ad-01.musiccloud.local   88
+srv-ad-01.musiccloud.local         A
+
+
+RESOLUCIO INVERSA
+
+Name                        Type NameHost
+----                        ---- --------
+109.56.168.192.in-addr.arpa  PTR SRV-AD-01.musiccloud.local
+
+
+RESOLUCIO EXTERNA AMB EL DNS DEL DOMINI
+
+Name                               Type IPAddress    NameHost
+----                               ---- ---------    --------
+www.microsoft.com                 CNAME              www.microsoft.com-c-3.edgekey.net
+www.microsoft.com-c-3.edgekey.net CNAME              e13678.dscb.akamaiedge.net
+e13678.dscb.akamaiedge.net            A 2.22.209.211
+
+
+LOCALITZACIO DEL CONTROLADOR
+           DC: \\SRV-AD-01.musiccloud.local
+      Dirección: \\fd17:625c:f037:2:e4e2:c7d2:59a7:8715
+     GUID del DOM: f8d71ad5-071e-4f2d-9ab7-1b8417851321
+     Nombre del DOM: musiccloud.local
+  Nombre del bosque: musiccloud.local
+ Nombre de sitio DC: Default-First-Site-Name
+Nuestro nombre de sitio: Default-First-Site-Name
+        Marcas: PDC GC DS LDAP KDC TIMESERV GTIMESERV WRITABLE DNS_DC DNS_DOMAIN DNS_FOREST CLOSE_SITE FULL_SECRET WS DS_8 DS_9 DS_10 LISTA DE CLAVES
+El comando se completó correctamente
+DIAGNOSTIC DEL CONTROLADOR
+
+Diagn�stico del servidor de directorio
+
+
+Realizando instalaci�n inicial:
+
+   Intentando encontrar el servidor principal...
+
+   Servidor principal = SRV-AD-01
+
+   * Se identific� el bosque de AD.
+   Recopilaci�n de informaci�n inicial finalizada.
+
+
+Realizando pruebas requeridas iniciales
+
+
+   Probando servidor: Default-First-Site-Name\SRV-AD-01
+
+      Iniciando prueba: Connectivity
+
+         ......................... SRV-AD-01 super� la prueba Connectivity
+
+
+
+Realizando pruebas principales
+
+
+   Probando servidor: Default-First-Site-Name\SRV-AD-01
+
+      Iniciando prueba: Advertising
+
+         ......................... SRV-AD-01 super� la prueba Advertising
+
+      Iniciando prueba: SysVolCheck
+
+         ......................... SRV-AD-01 super� la prueba SysVolCheck
+
+      Iniciando prueba: NetLogons
+
+         ......................... SRV-AD-01 super� la prueba NetLogons
+
+      Iniciando prueba: Replications
+
+         ......................... SRV-AD-01 super� la prueba Replications
+
+      Iniciando prueba: Services
+
+         ......................... SRV-AD-01 super� la prueba Services
+
+
+
+   Ejecutando pruebas de partici�n en: ForestDnsZones
+
+
+   Ejecutando pruebas de partici�n en: DomainDnsZones
+
+
+   Ejecutando pruebas de partici�n en: Schema
+
+
+   Ejecutando pruebas de partici�n en: Configuration
+
+
+   Ejecutando pruebas de partici�n en: musiccloud
+
+
+   Ejecutando pruebas de empresa en: musiccloud.local
+
+DIAGNOSTIC DNS
+
+Diagn�stico del servidor de directorio
+
+
+Realizando instalaci�n inicial:
+
+   Intentando encontrar el servidor principal...
+
+   Servidor principal = SRV-AD-01
+
+   * Se identific� el bosque de AD.
+   Recopilaci�n de informaci�n inicial finalizada.
+
+
+Realizando pruebas requeridas iniciales
+
+
+   Probando servidor: Default-First-Site-Name\SRV-AD-01
+
+      Iniciando prueba: Connectivity
+
+         ......................... SRV-AD-01 super� la prueba Connectivity
+
+
+
+Realizando pruebas principales
+
+
+   Probando servidor: Default-First-Site-Name\SRV-AD-01
+
+
+      Iniciando prueba: DNS
+
+
+
+         Las pruebas de DNS se est�n ejecutando y responden. Espere unos
+
+         minutos...
+
+         ......................... SRV-AD-01 super� la prueba DNS
+
+
+   Ejecutando pruebas de partici�n en: ForestDnsZones
+
+
+   Ejecutando pruebas de partici�n en: DomainDnsZones
+
+
+   Ejecutando pruebas de partici�n en: Schema
+
+
+   Ejecutando pruebas de partici�n en: Configuration
+
+
+   Ejecutando pruebas de partici�n en: musiccloud
+
+
+   Ejecutando pruebas de empresa en: musiccloud.local
+
+      Iniciando prueba: DNS
+
+         ......................... musiccloud.local super� la prueba DNS
+
+VERIFICACIO_COMPLETA_CORRECTA
+La transcripción se ha detenido. El archivo de salida es C:\MusicCloudLab\06-verificacio.txt

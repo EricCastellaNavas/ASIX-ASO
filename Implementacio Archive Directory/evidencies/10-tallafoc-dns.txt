@@ -1,0 +1,28 @@
+
+
+Name      : DNSSrv-DNS-UDP-In
+Enabled   : True
+Profile   : Any
+Direction : Inbound
+Action    : Allow
+
+Name      : DNSSrv-DNS-TCP-In
+Enabled   : True
+Profile   : Any
+Direction : Inbound
+Action    : Allow
+
+
+
+
+
+LocalAddress  : 192.168.56.109
+RemoteAddress : 192.168.56.0/255.255.255.0
+
+LocalAddress  : 192.168.56.109
+RemoteAddress : 192.168.56.0/255.255.255.0
+
+
+
+2026-10-27T17:44:47.8146440+01:00
+time.windows.com,0x8

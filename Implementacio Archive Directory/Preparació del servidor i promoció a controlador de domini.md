@@ -137,28 +137,118 @@ Després del reinici, comproveu:
     
 Completeu la taula següent. Adjunta la comanda que has utilitzat per a cada una de les comprovacions.
 
-| Comprovació                          | Resultat |
-| ------------------------------------ | -------- |
-| Nom del servidor                     |          |
-| IP fixa configurada                  |          |
-| AD DS instal·lat                     |          |
-| Domini creat                         |          |
-| DNS instal·lat                       |          |
-| Resolució de `musiccloud.local`      |          |
-| Eines d’Active Directory disponibles |          |
+| Comprovació | Comanda utilitzada | Resultat |
+| --- | --- | --- |
+| Nom del servidor | `hostname` | `SRV-AD-01` |
+| IP fixa configurada | `Get-NetIPAddress -InterfaceAlias 'Ethernet 2' -AddressFamily IPv4` i `Get-NetIPInterface -InterfaceAlias 'Ethernet 2' -AddressFamily IPv4` | `192.168.56.109/24`, origen `Manual` i DHCP `Disabled` |
+| AD DS instal·lat | `Get-WindowsFeature AD-Domain-Services` | `Installed` |
+| Domini creat | `Get-ADDomain` | `DNSRoot: musiccloud.local`, `NetBIOSName: MUSICCLOUD` |
+| DNS instal·lat | `Get-WindowsFeature DNS` i `Get-Service DNS` | Rol `Installed` i servei `Running` |
+| Resolució de `musiccloud.local` | `Resolve-DnsName musiccloud.local -Type A -Server 192.168.56.109` | `192.168.56.109` |
+| Eines d'Active Directory disponibles | `Get-WindowsFeature RSAT-AD-Tools,RSAT-AD-PowerShell` i `Get-Command Get-ADDomain,Get-ADUser` | Eines instal·lades i comandes disponibles al mòdul `ActiveDirectory` |
+
+També he comprovat que el servidor és un controlador d'escriptura i catàleg global:
+
+```powershell
+Get-CimInstance Win32_ComputerSystem | Select-Object Name,Domain,DomainRole
+Get-ADDomainController -Identity SRV-AD-01 |
+    Select-Object HostName,IPv4Address,IsGlobalCatalog,IsReadOnly
+Get-ADForest | Select-Object RootDomain,ForestMode,GlobalCatalogs
+Get-Service NTDS,DNS,Netlogon,Kdc,ADWS,DFSR,sshd
+Get-SmbShare -Name SYSVOL,NETLOGON
+```
+
+Resultat: `DomainRole: 5`, `IsGlobalCatalog: True`, `IsReadOnly: False`, serveis en execució i recursos `SYSVOL` i `NETLOGON` disponibles.
+
+#### Ajustos DNS per a les dues targetes de xarxa
+
+He mantingut `192.168.56.109` per a SSH i per als serveis del domini. Després de la promoció he limitat l'escolta DNS a aquesta IP i he configurat el reenviador `10.0.2.3` de la NAT per resoldre noms externs. Les targetes continuen utilitzant `192.168.56.109` com a DNS preferit.
+
+```powershell
+$dnsSettings = Get-DnsServerSetting -All
+$dnsSettings.ListeningIPAddress = @('192.168.56.109')
+Set-DnsServerSetting $dnsSettings
+Set-DnsServerForwarder -IPAddress '10.0.2.3'
+Restart-Service DNS
+```
+
+He evitat la publicació de la targeta NAT al DNS i he comprovat que els registres del domini i del servidor apunten a `192.168.56.109`. També he creat la zona inversa `56.168.192.in-addr.arpa` i el registre PTR de `192.168.56.109` cap a `SRV-AD-01.musiccloud.local`.
+
+He deixat les regles DNS d'entrada limitades a l'adreça del servidor i als clients de la xarxa del laboratori:
+
+```powershell
+Set-NetFirewallRule -Name 'DNSSrv-DNS-UDP-In','DNSSrv-DNS-TCP-In' -Enabled True -Profile Any -LocalAddress '192.168.56.109' -RemoteAddress '192.168.56.0/24'
+```
+
+```powershell
+Resolve-DnsName SRV-AD-01.musiccloud.local -Type A -Server 192.168.56.109
+Resolve-DnsName _ldap._tcp.dc._msdcs.musiccloud.local -Type SRV -Server 192.168.56.109
+Resolve-DnsName _kerberos._tcp.musiccloud.local -Type SRV -Server 192.168.56.109
+Resolve-DnsName 192.168.56.109 -Type PTR -Server 192.168.56.109
+Resolve-DnsName www.microsoft.com -Type A -Server 192.168.56.109
+nltest /dsgetdc:musiccloud.local /force
+dcdiag /test:Advertising /test:Services /test:NetLogons /test:SysVolCheck /test:Replications
+dcdiag /test:DNS /DnsBasic
+```
+
+Els registres SRV localitzen `srv-ad-01.musiccloud.local` als ports `389` (LDAP) i `88` (Kerberos). Les comprovacions del controlador i el diagnòstic DNS han passat.
+
+Des de l'amfitrió he comprovat l'accés als ports SSH `22`, Kerberos `88`, LDAP `389`, SMB `445` i catàleg global `3268`. La consulta DNS des d'aquest entorn no s'ha pogut validar: l'obertura del port `53` retorna l'error de permisos de socket `10013`. La resolució directa, inversa, externa i SRV sí que s'ha verificat dins de la VM. Per tant, la prova DNS des d'un client extern queda pendent d'un entorn que permeti aquesta connexió.
+
+#### Hora del controlador i eines DNS
+
+Després de la promoció he detectat que el PDC utilitzava `Local CMOS Clock` i tenia un desajust horari. He configurat una font NTP externa i he comprovat que l'hora UTC del servidor coincideix amb la de l'amfitrió.
+
+```powershell
+w32tm /config /manualpeerlist:"time.windows.com,0x8" /syncfromflags:manual /reliable:yes /update
+Restart-Service W32Time
+w32tm /resync /rediscover
+w32tm /query /status
+w32tm /query /source
+```
+
+La sincronització ha acabat correctament i la font és `time.windows.com,0x8`. També he instal·lat explícitament la consola de gestió DNS:
+
+```powershell
+Install-WindowsFeature -Name RSAT-DNS-Server
+```
+
+Evidències: [05-configuracio-dns.txt](evidencies/05-configuracio-dns.txt), [06-verificacio.txt](evidencies/06-verificacio.txt), [07-verificacio-amfitrio.txt](evidencies/07-verificacio-amfitrio.txt), [08-sincronitzacio-hora.txt](evidencies/08-sincronitzacio-hora.txt), [09-eines-dns.txt](evidencies/09-eines-dns.txt) i [10-tallafoc-dns.txt](evidencies/10-tallafoc-dns.txt).
 
 ## Preguntes
 
 Responeu breument:
 
 1. Per què `SRV-AD-01` necessita una IP fixa?
+
+    > Perquè els clients puguin trobar sempre el controlador de domini i el DNS a la mateixa adreça, sense canvis provocats pel DHCP.
     
 2. Per què és necessari DNS en un domini Active Directory?
+
+    > Perquè permet resoldre els noms del domini i trobar els serveis del controlador mitjançant registres SRV, com LDAP i Kerberos.
     
 3. Quina diferència hi ha entre instal·lar AD DS i promocionar el servidor a controlador de domini?
+
+    > Instal·lar AD DS afegeix el rol i les eines. Promocionar configura el directori i converteix el servidor en controlador de domini; en aquesta pràctica també crea el bosc i el domini.
     
 4. Quin és el nom del domini creat?
+
+    > `musiccloud.local`.
     
 5. Quin és el nom NetBIOS del domini?
+
+    > `MUSICCLOUD`.
     
 6. Per què no és recomanable que els clients del domini utilitzin un DNS extern com a DNS principal?
+
+    > Perquè un DNS extern no coneix la zona interna ni els registres SRV d'Active Directory, i els clients podrien no trobar el controlador ni autenticar-se. Han d'utilitzar el DNS del domini, que pot reenviar les consultes externes.
+
+
+## Fonts consultades
+
+- Apunts de classe, *ASO APUNTS*, apartat 3 «Active Directory» (pàgines 32-34).
+- [Microsoft Learn: instal·lació d'AD DS](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/deploy/install-active-directory-domain-services--level-100-).
+- [Microsoft Learn: Install-ADDSForest](https://learn.microsoft.com/en-us/powershell/module/addsdeployment/install-addsforest?view=windowsserver2022-ps).
+- [Microsoft Learn: configurar les interfícies i els reenviadors DNS](https://learn.microsoft.com/en-us/windows-server/networking/dns/quickstart-install-configure-dns-server).
+- [Microsoft Learn: evitar el registre de targetes no desitjades al DNS](https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/unwanted-nic-registered-dns-mulithomed-dc).
+- [Microsoft Learn: configurar la font horària del PDC](https://learn.microsoft.com/en-us/services-hub/microsoft-engage-center/health/remediation-steps-ad/configure-the-root-pdc-with-an-authoritative-time-source-and-avoid-widespread-time-skew).

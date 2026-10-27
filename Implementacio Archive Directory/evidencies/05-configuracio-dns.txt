@@ -1,0 +1,46 @@
+La transcripción ha comenzado. El archivo de salida es C:\MusicCloudLab\05-configuracio-dns.txt
+
+
+IPAddress   : 10.0.2.3
+UseRootHint : True
+
+
+
+Marcas: 0
+Conexión Status = 0 0x0 NERR_Success
+El comando se completó correctamente
+
+
+ListeningIPAddress : {192.168.56.109}
+
+
+
+
+
+IPAddress   : 10.0.2.3
+UseRootHint : True
+
+
+
+
+ZoneName                ZoneType IsDsIntegrated DynamicUpdate
+--------                -------- -------------- -------------
+_msdcs.musiccloud.local Primary            True Secure
+0.in-addr.arpa          Primary           False None
+127.in-addr.arpa        Primary           False None
+255.in-addr.arpa        Primary           False None
+56.168.192.in-addr.arpa Primary            True Secure
+musiccloud.local        Primary            True Secure
+
+
+
+HostName       RecordData
+--------       ----------
+@              DnsServerResourceRecordA
+DomainDnsZones DnsServerResourceRecordA
+ForestDnsZones DnsServerResourceRecordA
+srv-ad-01      DnsServerResourceRecordA
+
+
+CONFIGURACIO_DNS_CORRECTA
+La transcripción se ha detenido. El archivo de salida es C:\MusicCloudLab\05-configuracio-dns.txt

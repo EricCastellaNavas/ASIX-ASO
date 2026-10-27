@@ -1,0 +1,25 @@
+La transcripción ha comenzado. El archivo de salida es C:\MusicCloudLab\08-sincronitzacio-hora.txt
+HORA ABANS DE LA SINCRONITZACIO
+2026-10-27T17:34:03.8210162+01:00
+El comando se ha completado correctamente.
+Enviando comando de resincronizaci�n al equipo local
+El comando se ha completado correctamente.
+HORA I FONT DESPRES DE LA SINCRONITZACIO
+2026-10-27T17:34:05.2353557+01:00
+Indicador de salto: 0(ninguna advertencia)
+Capa: 5 (referencia secundaria - sincronizada mediante (S)NTP)
+Precisi�n: -23 (119.209ns por tick)
+Demora de ra�z: 0.0882878s
+Dispersi�n de ra�z: 68.2897348s
+Id. de referencia: 0x3389896F (IP de origen:  51.137.137.111)
+�ltima sincronizaci�n de hora correcta: 27/10/2026 17:34:05
+Origen: time.windows.com,0x8
+Intervalo de sondeo: 6 (64s)
+
+time.windows.com,0x8
+SINCRONITZACIO_HORA_CORRECTA
+La transcripción se ha detenido. El archivo de salida es C:\MusicCloudLab\08-sincronitzacio-hora.txt
+COMPARACIO UTC FINAL (27/10/2026)
+Amfitrio abans: 2026-10-27T16:45:19.0780309Z
+VM: 2026-10-27T16:45:19.2506235Z
+Amfitrio despres: 2026-10-27T16:45:20.8352360Z
