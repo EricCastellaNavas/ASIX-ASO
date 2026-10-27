@@ -244,11 +244,3 @@ Responeu breument:
     > Perquè un DNS extern no coneix la zona interna ni els registres SRV d'Active Directory, i els clients podrien no trobar el controlador ni autenticar-se. Han d'utilitzar el DNS del domini, que pot reenviar les consultes externes.
 
 
-## Fonts consultades
-
-- Apunts de classe, *ASO APUNTS*, apartat 3 «Active Directory» (pàgines 32-34).
-- [Microsoft Learn: instal·lació d'AD DS](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/deploy/install-active-directory-domain-services--level-100-).
-- [Microsoft Learn: Install-ADDSForest](https://learn.microsoft.com/en-us/powershell/module/addsdeployment/install-addsforest?view=windowsserver2022-ps).
-- [Microsoft Learn: configurar les interfícies i els reenviadors DNS](https://learn.microsoft.com/en-us/windows-server/networking/dns/quickstart-install-configure-dns-server).
-- [Microsoft Learn: evitar el registre de targetes no desitjades al DNS](https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/unwanted-nic-registered-dns-mulithomed-dc).
-- [Microsoft Learn: configurar la font horària del PDC](https://learn.microsoft.com/en-us/services-hub/microsoft-engage-center/health/remediation-steps-ad/configure-the-root-pdc-with-an-authoritative-time-source-and-avoid-widespread-time-skew).
