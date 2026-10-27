@@ -1,0 +1,154 @@
+**********************
+Inicio de la transcripción de Windows PowerShell
+Hora de inicio: 20261027171717
+Nombre de usuario: WORKGROUP\SYSTEM
+Usuario RunAs: WORKGROUP\SYSTEM
+Nombre de la configuración: 
+Máquina: ASO-SRV01 (Microsoft Windows NT 10.0.20348.0)
+Aplicación host: powershell.exe -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Bypass -File C:\MusicCloudLab\prepare-server.ps1
+Id. de proceso: 2072
+PSVersion: 5.1.20348.558
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.20348.558
+BuildVersion: 10.0.20348.558
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+La transcripción ha comenzado. El archivo de salida es C:\MusicCloudLab\01-preparacio.txt
+
+
+
+InterfaceAlias              IPAddress      PrefixLength PrefixOrigin
+--------------              ---------      ------------ ------------
+Ethernet 2                  192.168.56.109           24       Manual
+Ethernet                    10.0.2.15                24       Manual
+Loopback Pseudo-Interface 1 127.0.0.1                 8    WellKnown
+
+
+
+InterfaceAlias                  Dhcp ConnectionState
+--------------                  ---- ---------------
+Ethernet 2                  Disabled       Connected
+Ethernet                    Disabled       Connected
+Loopback Pseudo-Interface 1 Disabled       Connected
+
+
+
+time.windows.com,0x8
+ADVERTENCIA: Los cambios serán efectivos tras reiniciar el equipo ASO-SRV01.
+
+ComputerName           : 10.0.2.2
+RemoteAddress          : 10.0.2.2
+NameResolutionResults  : 10.0.2.2
+InterfaceAlias         : Ethernet
+SourceAddress          : 10.0.2.15
+NetRoute (NextHop)     : 0.0.0.0
+PingSucceeded          : True
+PingReplyDetails (RTT) : 0 ms
+
+
+Name      : www.microsoft.com
+QueryType : CNAME
+TTL       : 589
+Section   : Answer
+NameHost  : www.microsoft.com-c-3.edgekey.net
+
+
+Name      : www.microsoft.com-c-3.edgekey.net
+QueryType : CNAME
+TTL       : 589
+Section   : Answer
+NameHost  : e13678.dscb.akamaiedge.net
+
+
+Name       : e13678.dscb.akamaiedge.net
+QueryType  : A
+TTL        : 3
+Section    : Answer
+IP4Address : 2.22.209.211
+
+
+Id                         : Romance Standard Time
+DisplayName                : (UTC+01:00) Bruselas, Copenhague, Madrid, París
+StandardName               : Hora estándar romance
+DaylightName               : Hora de verano romance
+BaseUtcOffset              : 01:00:00
+SupportsDaylightSavingTime : True
+
+2026-10-27T17:18:00.8452668+01:00
+PREPARACIO_CORRECTA
+**********************
+Fin de la transcripción de Windows PowerShell
+Hora de finalización: 20261027171801
+**********************
+
+--- ESTAT DESPRES DEL REINICI ---
+
+
+Name       : SRV-AD-01
+Domain     : WORKGROUP
+DomainRole : 2
+
+
+
+
+
+Caption        : Microsoft Windows Server 2022 Standard Evaluation
+LastBootUpTime : 27/10/2026 17:18:31
+
+
+
+
+InterfaceAlias              IPAddress      PrefixLength PrefixOrigin
+--------------              ---------      ------------ ------------
+Ethernet 2                  192.168.56.109           24       Manual
+Ethernet                    10.0.2.15                24       Manual
+Loopback Pseudo-Interface 1 127.0.0.1                 8    WellKnown
+
+
+
+InterfaceAlias                  Dhcp ConnectionState
+--------------                  ---- ---------------
+Ethernet 2                  Disabled       Connected
+Ethernet                    Disabled       Connected
+Loopback Pseudo-Interface 1 Disabled       Connected
+
+
+
+InterfaceAlias NextHop 
+-------------- ------- 
+Ethernet       10.0.2.2
+
+
+
+InterfaceAlias              ServerAddresses 
+--------------              --------------- 
+Ethernet                    {192.168.56.109}
+Ethernet 2                  {192.168.56.109}
+Loopback Pseudo-Interface 1 {}              
+
+
+
+InterfaceAlias              RegisterThisConnectionsAddress
+--------------              ------------------------------
+Ethernet                                             False
+Ethernet 2                                            True
+Loopback Pseudo-Interface 1                           True
+
+
+
+
+Id          : Romance Standard Time
+DisplayName : (UTC+01:00) Bruselas, Copenhague, Madrid, París
+
+
+
+2026-10-27T17:18:49.5172126+01:00
+
+
+LastRunTime    : 27/10/2026 17:17:17
+LastTaskResult : 0
+
+

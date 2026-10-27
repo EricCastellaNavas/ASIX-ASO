@@ -36,11 +36,33 @@ Completeu la taula següent:
 
 | Paràmetre        | Valor configurat |
 | ---------------- | ---------------- |
-| Adreça IP        |                  |
-| Màscara          |                  |
-| Porta d’enllaç   |                  |
-| DNS preferit     |                  |
-| Nom del servidor |                  |
+| Adreça IP        | `192.168.56.109/24` (Ethernet 2, xarxa del laboratori) |
+| Màscara          | `255.255.255.0` |
+| Porta d’enllaç   | Sense porta d'enllaç a Ethernet 2; sortida a Internet per `10.0.2.2` a Ethernet (NAT) |
+| DNS preferit     | `192.168.56.109` (el mateix servidor) |
+| Nom del servidor | `SRV-AD-01` |
+
+He preparat un Windows Server 2022 Standard Evaluation. La màquina tenia dues targetes amb DHCP: he mantingut les adreces del laboratori i les he configurat de manera fixa. La targeta NAT té `10.0.2.15/24` i és l'única amb porta d'enllaç. Les dues targetes utilitzen el servidor mateix com a DNS.
+
+He desactivat el registre DNS de la targeta NAT perquè els clients del laboratori trobin el controlador a `192.168.56.109`. He comprovat la zona horària `Romance Standard Time` (Madrid) i l'hora del sistema. Després he reiniciat per aplicar el nom nou.
+
+Comandes utilitzades a PowerShell com a administrador:
+
+```powershell
+netsh interface ipv4 set address name="Ethernet" source=static address=10.0.2.15 mask=255.255.255.0 gateway=10.0.2.2 gwmetric=10
+netsh interface ipv4 set address name="Ethernet 2" source=static address=192.168.56.109 mask=255.255.255.0 gateway=none
+Set-DnsClient -InterfaceAlias 'Ethernet' -RegisterThisConnectionsAddress $false
+Set-DnsClient -InterfaceAlias 'Ethernet 2' -RegisterThisConnectionsAddress $true
+Set-DnsClientServerAddress -InterfaceAlias 'Ethernet','Ethernet 2' -ServerAddresses '192.168.56.109'
+Set-TimeZone -Id 'Romance Standard Time'
+Get-TimeZone
+Get-Date -Format o
+Rename-Computer -NewName 'SRV-AD-01' -Force
+shutdown.exe /r /t 15
+```
+
+He comprovat la connexió de xarxa i la resolució externa a través del DNS de la NAT abans de configurar el DNS local. Les evidències de la preparació són a [01-preparacio.txt](evidencies/01-preparacio.txt).
+
 ### Part 2. Instal·lació del rol AD DS
 
 Localitzeu i utilitzeu el procediment adequat per instal·lar el rol AD DS i promocionar el servidor a controlador de domini. Documenteu breument les comandes o passos utilitzats.
@@ -100,5 +122,3 @@ Responeu breument:
 5. Quin és el nom NetBIOS del domini?
     
 6. Per què no és recomanable que els clients del domini utilitzin un DNS extern com a DNS principal?
-    
-
