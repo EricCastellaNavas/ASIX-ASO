@@ -1,0 +1,30 @@
+La transcripción ha comenzado. El archivo de salida es C:\MusicCloudLab\02-installacio-adds.txt
+
+
+Success       : True
+RestartNeeded : No
+ExitCode      : Success
+FeatureResult : {Servicios de dominio de Active Directory, Administración de directivas de grupo, 
+                Herramientas de administración remota del servidor, Módulo de Active Directory 
+                para Windows PowerShell...}
+
+
+
+
+Name               InstallState
+----               ------------
+AD-Domain-Services    Installed
+RSAT-AD-Tools         Installed
+RSAT-AD-PowerShell    Installed
+
+
+
+Name                        Source         
+----                        ------         
+Install-ADDSForest          ADDSDeployment 
+Test-ADDSForestInstallation ADDSDeployment 
+Get-ADDomain                ActiveDirectory
+
+
+INSTALLACIO_ADDS_CORRECTA
+La transcripción se ha detenido. El archivo de salida es C:\MusicCloudLab\02-installacio-adds.txt

@@ -67,6 +67,19 @@ He comprovat la connexió de xarxa i la resolució externa a través del DNS de 
 
 Localitzeu i utilitzeu el procediment adequat per instal·lar el rol AD DS i promocionar el servidor a controlador de domini. Documenteu breument les comandes o passos utilitzats.
 
+He seguit el procediment de PowerShell de [Microsoft Learn per instal·lar AD DS](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/deploy/install-active-directory-domain-services--level-100-), i l'ordre dels apunts: preparar la xarxa, instal·lar AD DS amb les eines de gestió i crear el bosc i el domini.
+
+```powershell
+Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
+Get-WindowsFeature AD-Domain-Services,RSAT-AD-Tools,RSAT-AD-PowerShell
+Get-Command Install-ADDSForest,Test-ADDSForestInstallation,Get-ADDomain
+```
+
+La instal·lació ha retornat `Success: True`, `ExitCode: Success` i `RestartNeeded: No`. El rol `AD-Domain-Services`, les eines `RSAT-AD-Tools` i el mòdul `RSAT-AD-PowerShell` han quedat instal·lats. En aquest punt encara calia promocionar el servidor per crear el domini.
+
+Evidència: [02-installacio-adds.txt](evidencies/02-installacio-adds.txt).
+
+
 ### Part 3. Promoció a controlador de domini
 Promocioneu el servidor a controlador de domini amb les opcions següents:
 
@@ -80,6 +93,33 @@ Promocioneu el servidor a controlador de domini amb les opcions següents:
 | Controlador de domini de només lectura | No                 |
 | Reinici final                          | Sí                 |
 Definiu una contrasenya segura per al mode de restauració de serveis de directori.
+
+He creat el bosc i el domini `musiccloud.local` amb el nom NetBIOS `MUSICCLOUD`, tal com indica aquest enunciat i els apunts. He utilitzat el nivell funcional Windows Server 2016 (`WinThreshold`), compatible amb Windows Server 2022.
+
+Primer he comprovat els requisits i després he executat la promoció. La contrasenya DSRM s'ha proporcionat com a `SecureString` i s'ha guardat fora del repositori.
+
+```powershell
+# La contrasenya es demana de manera oculta; no s'escriu dins del script.
+$dsrmPassword = Read-Host 'Contrasenya DSRM' -AsSecureString
+$opcions = @{
+    DomainName = 'musiccloud.local'
+    DomainNetbiosName = 'MUSICCLOUD'
+    InstallDns = $true
+    CreateDnsDelegation = $false
+    DomainMode = 'WinThreshold'
+    ForestMode = 'WinThreshold'
+    SafeModeAdministratorPassword = $dsrmPassword
+}
+Test-ADDSForestInstallation @opcions
+Install-ADDSForest @opcions -Force
+```
+
+En l'execució per SSH he passat la contrasenya per l'entrada estàndard xifrada de la connexió i l'he convertit a `SecureString`; el bloc anterior mostra l'equivalent interactiu per repetir el procediment.
+
+Les comprovacions prèvies han retornat `Status: Success`. Han aparegut avisos sobre la protecció contra criptografia antiga i la impossibilitat de crear una delegació DNS a la zona pare; no són errors de la instal·lació. No he creat cap delegació DNS perquè és un bosc nou del laboratori. El primer controlador d'un bosc és un controlador d'escriptura i catàleg global. He deixat el reinici automàtic habilitat i he tornat a entrar per SSH després del reinici.
+
+Evidències: [03-precomprovacions.txt](evidencies/03-precomprovacions.txt) i [04-promocio.txt](evidencies/04-promocio.txt).
+
 ### Part 4. Verificació
 
 Després del reinici, comproveu:

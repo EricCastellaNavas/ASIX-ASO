@@ -1,0 +1,12 @@
+La transcripción ha comenzado. El archivo de salida es C:\MusicCloudLab\03-precomprovacions.txt
+
+
+Message        : Operación completada correctamente.
+Context        : Test.VerifyDcPromoCore.DCPromo.General.1
+RebootRequired : False
+Status         : Success
+
+
+
+PRECOMPROVACIONS_CORRECTES
+La transcripción se ha detenido. El archivo de salida es C:\MusicCloudLab\03-precomprovacions.txt
