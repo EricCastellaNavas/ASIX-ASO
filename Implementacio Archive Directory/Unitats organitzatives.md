@@ -138,6 +138,32 @@ Dins de la UO `Equips`, creeu les UO següents:
 Clients
 Servidors
 ```
+
+### Resolució de la part 4
+
+He creat Clients i Servidors dins d’Equips.
+
+```powershell
+$ruta = "OU=Equips,OU=MusicCloud,DC=musiccloud,DC=local"
+$equips = @("Clients", "Servidors")
+
+foreach ($nomOU in $equips) {
+    try {
+        $OU = Get-ADOrganizationalUnit -Identity "OU=$nomOU,$ruta" -ErrorAction Stop
+    }
+    catch {
+        $OU = $null
+    }
+
+    if (-not $OU) {
+        New-ADOrganizationalUnit -Name $nomOU -Path $ruta -ErrorAction Stop
+    }
+    else {
+        Write-Host "L'OU ja existeix: $nomOU"
+    }
+}
+```
+
 ## Part 5. Verificació
 
 Executeu una consulta que mostri totes les unitats organitzatives del domini.
