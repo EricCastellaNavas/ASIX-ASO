@@ -269,3 +269,10 @@ Fitxer: [UO-7.2-Principal.ps1](<Scripts OU/UO-7.2-Principal.ps1>)
 
 Comprova si MusicCloud existeix a l’arrel del domini. Si no existeix, la crea;
 si ja hi és, la conserva.
+
+#### 7.3. Creació de la principal i les UO de primer nivell
+
+Fitxer: [UO-7.3-Primer-nivell.ps1](<Scripts OU/UO-7.3-Primer-nivell.ps1>)
+
+Comprova MusicCloud i recorre un array amb Usuaris, Equips i Grups.
+Només crea les UO que falten.
