@@ -69,6 +69,32 @@ Usuaris
 Equips
 Grups
 ```
+
+### Resolució de la part 2
+
+He creat les UO de primer nivell dins de MusicCloud, conservant les que ja existien.
+
+```powershell
+$ruta = "OU=MusicCloud,DC=musiccloud,DC=local"
+$unitats = @("Usuaris", "Equips", "Grups")
+
+foreach ($nomOU in $unitats) {
+    try {
+        $OU = Get-ADOrganizationalUnit -Identity "OU=$nomOU,$ruta" -ErrorAction Stop
+    }
+    catch {
+        $OU = $null
+    }
+
+    if (-not $OU) {
+        New-ADOrganizationalUnit -Name $nomOU -Path $ruta -ErrorAction Stop
+    }
+    else {
+        Write-Host "L'OU ja existeix: $nomOU"
+    }
+}
+```
+
 ## Part 3. Creació de les UO de departaments
 
 Dins de la UO `Usuaris`, creeu les UO següents:
