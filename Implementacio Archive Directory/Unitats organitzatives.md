@@ -203,10 +203,22 @@ i 23 al domini si hi incloc Domain Controllers.
 
 Responeu breument:
 
-1. Per què és útil crear una UO principal anomenada `MusicCloud`?  
-2. Per què se separen `Usuaris`, `Equips` i `Grups`?  
-3. Per què els departaments s’han creat dins de `Usuaris`?  
-4. Per què no és recomanable deixar tots els usuaris dins del contenidor `Users`?  
+1. Per què és útil crear una UO principal anomenada `MusicCloud`?
+
+   > Per agrupar els objectes de l’empresa en un mateix lloc i facilitar-ne l’administració. També permet vincular-hi polítiques comunes.
+
+2. Per què se separen `Usuaris`, `Equips` i `Grups`?
+
+   > Perquè són objectes amb funcions diferents. Separar-los facilita trobar-los i administrar-los; les polítiques d’usuari i d’equip es poden organitzar a les UO corresponents.
+
+3. Per què els departaments s’han creat dins de `Usuaris`?
+
+   > Per organitzar els comptes segons el departament on treballa cada persona i facilitar l’administració i l’aplicació de polítiques.
+
+4. Per què no és recomanable deixar tots els usuaris dins del contenidor `Users`?
+
+   > Perquè Users és un contenidor predeterminat, no una UO. No hi podem vincular GPO directament i no permet organitzar els comptes per departaments com amb una estructura de UO.
+
 
 ## Part 7. Creació scripts
 
