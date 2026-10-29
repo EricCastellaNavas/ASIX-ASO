@@ -105,6 +105,32 @@ Desenvolupament
 Sistemes
 Direccio
 ```
+
+### Resolució de la part 3
+
+He utilitzat els noms de l’enunciat. A la VM ja hi havia Administració i Direcció amb accent; les consultes amb Administracio i Direccio localitzen aquestes mateixes UO i les he conservat. Les altres tres s’han creat.
+
+```powershell
+$ruta = "OU=Usuaris,OU=MusicCloud,DC=musiccloud,DC=local"
+$departaments = @("Administracio", "Comercial", "Desenvolupament", "Sistemes", "Direccio")
+
+foreach ($nomOU in $departaments) {
+    try {
+        $OU = Get-ADOrganizationalUnit -Identity "OU=$nomOU,$ruta" -ErrorAction Stop
+    }
+    catch {
+        $OU = $null
+    }
+
+    if (-not $OU) {
+        New-ADOrganizationalUnit -Name $nomOU -Path $ruta -ErrorAction Stop
+    }
+    else {
+        Write-Host "L'OU ja existeix: $nomOU"
+    }
+}
+```
+
 ## Part 4. Creació de les UO d’equips
 
 Dins de la UO `Equips`, creeu les UO següents:
