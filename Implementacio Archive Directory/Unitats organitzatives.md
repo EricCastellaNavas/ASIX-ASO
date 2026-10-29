@@ -169,6 +169,36 @@ foreach ($nomOU in $equips) {
 Executeu una consulta que mostri totes les unitats organitzatives del domini.
 
 La sortida ha de mostrar, com a mínim, les UO creades en aquesta pràctica.
+
+### Resolució de la part 5
+
+He executat aquesta consulta al servidor:
+
+```powershell
+Get-ADOrganizationalUnit -Filter * -SearchBase "DC=musiccloud,DC=local" |
+    Select-Object Name, DistinguishedName
+```
+
+Dins de la sortida he comprovat les UO de la pràctica:
+
+| UO real | Ubicació |
+| --- | --- |
+| MusicCloud | Arrel de musiccloud.local |
+| Usuaris | MusicCloud |
+| Equips | MusicCloud |
+| Grups | MusicCloud |
+| Administració | MusicCloud / Usuaris |
+| Comercial | MusicCloud / Usuaris |
+| Desenvolupament | MusicCloud / Usuaris |
+| Sistemes | MusicCloud / Usuaris |
+| Direcció | MusicCloud / Usuaris |
+| Clients | MusicCloud / Equips |
+| Servidors | MusicCloud / Equips |
+
+La consulta mostra també les UO dels exercicis anteriors, que he conservat.
+El resultat final és de 22 UO dins de MusicCloud, comptant la principal,
+i 23 al domini si hi incloc Domain Controllers.
+
 ## Part 6. Preguntes
 
 Responeu breument:
