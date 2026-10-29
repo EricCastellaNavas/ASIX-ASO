@@ -229,14 +229,14 @@ Responeu breument:
 
 ### Resolució de la part 7
 
-Els quatre scripts estan dins de la carpeta existent `Scripts OU`.
+Els quatre scripts estan dins de la subcarpeta `scripts`, al costat de la fitxa.
 He utilitzat variables, arrays, `foreach`, `try/catch`, `if/else`,
 `Get-ADOrganizationalUnit`, `New-ADOrganizationalUnit` i `Write-Host`,
 seguint els apunts. Comproven si cada UO existeix abans de crear-la.
 
 #### 7.1. Eliminació de les UO
 
-Fitxer: [UO-7.1-Eliminar.ps1](<Scripts OU/UO-7.1-Eliminar.ps1>)
+Fitxer: [UO-7.1-Eliminar.ps1](<scripts/UO-7.1-Eliminar.ps1>)
 
 Elimina primer les UO de departaments i equips, després Usuaris, Equips
 i Grups i, finalment, MusicCloud. Només elimina les UO de la llista que
@@ -265,21 +265,21 @@ que pertanyen a la llista i estan buides; conservarà les que encara tinguin obj
 
 #### 7.2. Creació de la UO principal
 
-Fitxer: [UO-7.2-Principal.ps1](<Scripts OU/UO-7.2-Principal.ps1>)
+Fitxer: [UO-7.2-Principal.ps1](<scripts/UO-7.2-Principal.ps1>)
 
 Comprova si MusicCloud existeix a l’arrel del domini. Si no existeix, la crea;
 si ja hi és, la conserva.
 
 #### 7.3. Creació de la principal i les UO de primer nivell
 
-Fitxer: [UO-7.3-Primer-nivell.ps1](<Scripts OU/UO-7.3-Primer-nivell.ps1>)
+Fitxer: [UO-7.3-Primer-nivell.ps1](<scripts/UO-7.3-Primer-nivell.ps1>)
 
 Comprova MusicCloud i recorre un array amb Usuaris, Equips i Grups.
 Només crea les UO que falten.
 
 #### 7.4. Creació de l’estructura completa
 
-Fitxer: [UO-7.4-Estructura.ps1](<Scripts OU/UO-7.4-Estructura.ps1>)
+Fitxer: [UO-7.4-Estructura.ps1](<scripts/UO-7.4-Estructura.ps1>)
 
 Crea MusicCloud si falta, les tres UO de primer nivell, els cinc departaments
 sota Usuaris i Clients i Servidors sota Equips. Cada consulta utilitza el DN

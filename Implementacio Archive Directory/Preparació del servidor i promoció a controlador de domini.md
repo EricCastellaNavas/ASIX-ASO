@@ -61,7 +61,7 @@ Rename-Computer -NewName 'SRV-AD-01' -Force
 shutdown.exe /r /t 15
 ```
 
-He comprovat la connexió de xarxa i la resolució externa a través del DNS de la NAT abans de configurar el DNS local. Les evidències de la preparació són a [01-preparacio.txt](evidencies/01-preparacio.txt).
+He comprovat la connexió de xarxa i la resolució externa a través del DNS de la NAT abans de configurar el DNS local.
 
 ### Part 2. Instal·lació del rol AD DS
 
@@ -77,7 +77,6 @@ Get-Command Install-ADDSForest,Test-ADDSForestInstallation,Get-ADDomain
 
 La instal·lació ha retornat `Success: True`, `ExitCode: Success` i `RestartNeeded: No`. El rol `AD-Domain-Services`, les eines `RSAT-AD-Tools` i el mòdul `RSAT-AD-PowerShell` han quedat instal·lats. En aquest punt encara calia promocionar el servidor per crear el domini.
 
-Evidència: [02-installacio-adds.txt](evidencies/02-installacio-adds.txt).
 
 
 ### Part 3. Promoció a controlador de domini
@@ -118,7 +117,6 @@ En l'execució per SSH he passat la contrasenya per l'entrada estàndard xifrada
 
 Les comprovacions prèvies han retornat `Status: Success`. Han aparegut avisos sobre la protecció contra criptografia antiga i la impossibilitat de crear una delegació DNS a la zona pare; no són errors de la instal·lació. No he creat cap delegació DNS perquè és un bosc nou del laboratori. El primer controlador d'un bosc és un controlador d'escriptura i catàleg global. He deixat el reinici automàtic habilitat i he tornat a entrar per SSH després del reinici.
 
-Evidències: [03-precomprovacions.txt](evidencies/03-precomprovacions.txt) i [04-promocio.txt](evidencies/04-promocio.txt).
 
 ### Part 4. Verificació
 
@@ -213,7 +211,6 @@ La sincronització ha acabat correctament i la font és `time.windows.com,0x8`. 
 Install-WindowsFeature -Name RSAT-DNS-Server
 ```
 
-Evidències: [05-configuracio-dns.txt](evidencies/05-configuracio-dns.txt), [06-verificacio.txt](evidencies/06-verificacio.txt), [07-verificacio-amfitrio.txt](evidencies/07-verificacio-amfitrio.txt), [08-sincronitzacio-hora.txt](evidencies/08-sincronitzacio-hora.txt), [09-eines-dns.txt](evidencies/09-eines-dns.txt) i [10-tallafoc-dns.txt](evidencies/10-tallafoc-dns.txt).
 
 ## Preguntes
 
