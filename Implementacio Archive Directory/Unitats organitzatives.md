@@ -226,3 +226,39 @@ Responeu breument:
 - 7.2. Crea un script que crei l'OU principal (musiccloud).
 - 7.3. Crea un script que crei l'OU principal i les OUs descendents: Usuaris, Equips i Grups
 - 7.4. Crea un script que creï l'OU principal si no existeix i que creï únicament les UO descendents que encara no existeixin. El script s'ha de poder executar més d'una vegada sense generar errors ni duplicar objectes.
+
+### Resolució de la part 7
+
+Els quatre scripts estan dins de la carpeta existent `Scripts OU`.
+He utilitzat variables, arrays, `foreach`, `try/catch`, `if/else`,
+`Get-ADOrganizationalUnit`, `New-ADOrganizationalUnit` i `Write-Host`,
+seguint els apunts. Comproven si cada UO existeix abans de crear-la.
+
+#### 7.1. Eliminació de les UO
+
+Fitxer: [UO-7.1-Eliminar.ps1](<Scripts OU/UO-7.1-Eliminar.ps1>)
+
+Elimina primer les UO de departaments i equips, després Usuaris, Equips
+i Grups i, finalment, MusicCloud. Només elimina les UO de la llista que
+estan buides. Si una UO encara conté objectes, la conserva i ho mostra.
+Això evita eliminar usuaris, equips o altres branques que no formen part
+d’aquest exercici.
+
+Les UO estan protegides contra l’eliminació accidental. Per això he afegit,
+amb autorització, aquesta comanda abans de cada eliminació:
+
+```powershell
+Set-ADOrganizationalUnit -Identity $OU.DistinguishedName -ProtectedFromAccidentalDeletion $false
+Remove-ADOrganizationalUnit -Identity $OU.DistinguishedName -Confirm:$false
+```
+
+Aquesta comanda no apareix als apunts. L’he consultat a la
+[documentació de Microsoft](https://learn.microsoft.com/en-us/powershell/module/activedirectory/set-adorganizationalunit?view=windowsserver2022-ps).
+La primera línia treu la protecció de la UO i la segona l’elimina.
+L’script fa servir `-ErrorAction Stop` per poder tractar els errors amb `catch`.
+
+La comprovació del contingut utilitza `Get-ADObject`, `-Filter`,
+`-SearchBase` i `Where-Object`, treballats als apunts.
+No he executat l’eliminació sobre MusicCloud: l’he provat en una branca temporal.
+Si s’executa sobre l’estructura actual, també pot eliminar les UO reutilitzades
+que pertanyen a la llista i estan buides; conservarà les que encara tinguin objectes.
