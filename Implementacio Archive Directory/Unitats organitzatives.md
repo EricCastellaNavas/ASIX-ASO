@@ -37,6 +37,30 @@ MusicCloud
 ```
 Aquesta UO serà el contenidor principal de l’estructura de l’empresa.
 
+
+### Resolució de la part 1
+
+He comprovat si MusicCloud ja existeix abans de crear-la. Així puc repetir la comanda sense duplicar la UO.
+
+```powershell
+$nomOU = "MusicCloud"
+$ruta = "DC=musiccloud,DC=local"
+
+try {
+    $OU = Get-ADOrganizationalUnit -Identity "OU=$nomOU,$ruta" -ErrorAction Stop
+}
+catch {
+    $OU = $null
+}
+
+if (-not $OU) {
+    New-ADOrganizationalUnit -Name $nomOU -Path $ruta -ErrorAction Stop
+}
+else {
+    Write-Host "L'OU ja existeix: $nomOU"
+}
+```
+
 ## Part 2. Creació de les UO de primer nivell
 
 Dins de la UO `MusicCloud`, creeu les UO següents:
