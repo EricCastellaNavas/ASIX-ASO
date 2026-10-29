@@ -276,3 +276,47 @@ Fitxer: [UO-7.3-Primer-nivell.ps1](<Scripts OU/UO-7.3-Primer-nivell.ps1>)
 
 Comprova MusicCloud i recorre un array amb Usuaris, Equips i Grups.
 Només crea les UO que falten.
+
+#### 7.4. Creació de l’estructura completa
+
+Fitxer: [UO-7.4-Estructura.ps1](<Scripts OU/UO-7.4-Estructura.ps1>)
+
+Crea MusicCloud si falta, les tres UO de primer nivell, els cinc departaments
+sota Usuaris i Clients i Servidors sota Equips. Cada consulta utilitza el DN
+complet, de manera que no confon UO de llocs diferents. És idempotent:
+repetir-lo conserva els objectes que ja existeixen.
+
+### Execució
+
+Al servidor, els scripts estan a `C:\ASO\Scripts-OU`:
+
+```powershell
+Set-Location C:\ASO\Scripts-OU
+.\UO-7.2-Principal.ps1
+.\UO-7.3-Primer-nivell.ps1
+.\UO-7.4-Estructura.ps1
+```
+
+Per eliminar l’estructura, només quan es vulgui fer la neteja de la pràctica:
+
+```powershell
+.\UO-7.1-Eliminar.ps1
+```
+
+Els scripts tenen el paràmetre opcional `-nomOUPrincipal`, amb valor
+predeterminat MusicCloud. L’he utilitzat per provar la creació i l’eliminació
+en una branca temporal sense esborrar l’estructura real.
+
+### Comprovacions realitzades
+
+| Prova | Resultat |
+| --- | --- |
+| Executar 7.2 sobre una branca nova | Una UO principal creada. |
+| Executar 7.3 a continuació | Quatre UO en total: principal i tres filles. |
+| Executar 7.4 a continuació | Onze UO en total: estructura completa. |
+| Repetir 7.4 | Mateixos objectes i identificadors, sense duplicats. |
+| Executar 7.1 sobre la branca temporal | Les onze UO eliminades. |
+| Repetir 7.1 | Detecta que ja no existeixen, sense errors. |
+| Executar i repetir la creació sobre MusicCloud | Estructura de l’enunciat disponible; UO anteriors conservades. |
+
+Les proves s’han fet per SSH a SRV-AD-01 el 29/10/2026.
