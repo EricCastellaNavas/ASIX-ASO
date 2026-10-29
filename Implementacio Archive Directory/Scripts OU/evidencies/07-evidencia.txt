@@ -1,0 +1,180 @@
+2026-10-29 16:14:57 +01:00
+OU creada: Direcció
+
+Name     DistinguishedName
+----     -----------------
+Direcció OU=Direcció,OU=Usuaris,OU=MusicCloud,DC=musiccloud,DC=local
+
+
+USUARIS: completar una estructura amb Direccio ja existent
+L'OU ja existeix: Usuaris
+Ja existeix: Direcció
+Creat: Administració
+Creat: Suport Tècnic
+Creat: Producció Musical
+Creat: Informàtica
+Creat: Externs
+
+Name              DistinguishedName
+----              -----------------
+Usuaris           OU=Usuaris,OU=MusicCloud,DC=musiccloud,DC=local
+Administració     OU=Administració,OU=Usuaris,OU=MusicCloud,DC=musiccloud,DC=local
+Direcció          OU=Direcció,OU=Usuaris,OU=MusicCloud,DC=musiccloud,DC=local
+Externs           OU=Externs,OU=Usuaris,OU=MusicCloud,DC=musiccloud,DC=local
+Informàtica       OU=Informàtica,OU=Usuaris,OU=MusicCloud,DC=musiccloud,DC=local
+Producció Musical OU=Producció Musical,OU=Usuaris,OU=MusicCloud,DC=musiccloud,DC=local
+Suport Tècnic     OU=Suport Tècnic,OU=Usuaris,OU=MusicCloud,DC=musiccloud,DC=local
+
+
+EQUIPS: crear els mateixos departaments en una altra branca
+L'OU ja existeix: Equips
+Creat: Direcció
+Creat: Administració
+Creat: Suport Tècnic
+Creat: Producció Musical
+Creat: Informàtica
+Creat: Externs
+
+Name              DistinguishedName
+----              -----------------
+Equips            OU=Equips,OU=MusicCloud,DC=musiccloud,DC=local
+Administració     OU=Administració,OU=Equips,OU=MusicCloud,DC=musiccloud,DC=local
+Direcció          OU=Direcció,OU=Equips,OU=MusicCloud,DC=musiccloud,DC=local
+Externs           OU=Externs,OU=Equips,OU=MusicCloud,DC=musiccloud,DC=local
+Informàtica       OU=Informàtica,OU=Equips,OU=MusicCloud,DC=musiccloud,DC=local
+Producció Musical OU=Producció Musical,OU=Equips,OU=MusicCloud,DC=musiccloud,DC=local
+Suport Tècnic     OU=Suport Tècnic,OU=Equips,OU=MusicCloud,DC=musiccloud,DC=local
+
+
+REPETICIO: ordre dels parametres invers i cap duplicat
+L'OU ja existeix: Usuaris
+Ja existeix: Direcció
+Ja existeix: Administració
+Ja existeix: Suport Tècnic
+Ja existeix: Producció Musical
+Ja existeix: Informàtica
+Ja existeix: Externs
+
+Name              DistinguishedName
+----              -----------------
+Usuaris           OU=Usuaris,OU=MusicCloud,DC=musiccloud,DC=local
+Administració     OU=Administració,OU=Usuaris,OU=MusicCloud,DC=musiccloud,DC=local
+Direcció          OU=Direcció,OU=Usuaris,OU=MusicCloud,DC=musiccloud,DC=local
+Externs           OU=Externs,OU=Usuaris,OU=MusicCloud,DC=musiccloud,DC=local
+Informàtica       OU=Informàtica,OU=Usuaris,OU=MusicCloud,DC=musiccloud,DC=local
+Producció Musical OU=Producció Musical,OU=Usuaris,OU=MusicCloud,DC=musiccloud,DC=local
+Suport Tècnic     OU=Suport Tècnic,OU=Usuaris,OU=MusicCloud,DC=musiccloud,DC=local
+
+
+L'OU ja existeix: Equips
+Ja existeix: Direcció
+Ja existeix: Administració
+Ja existeix: Suport Tècnic
+Ja existeix: Producció Musical
+Ja existeix: Informàtica
+Ja existeix: Externs
+
+Name              DistinguishedName
+----              -----------------
+Equips            OU=Equips,OU=MusicCloud,DC=musiccloud,DC=local
+Administració     OU=Administració,OU=Equips,OU=MusicCloud,DC=musiccloud,DC=local
+Direcció          OU=Direcció,OU=Equips,OU=MusicCloud,DC=musiccloud,DC=local
+Externs           OU=Externs,OU=Equips,OU=MusicCloud,DC=musiccloud,DC=local
+Informàtica       OU=Informàtica,OU=Equips,OU=MusicCloud,DC=musiccloud,DC=local
+Producció Musical OU=Producció Musical,OU=Equips,OU=MusicCloud,DC=musiccloud,DC=local
+Suport Tècnic     OU=Suport Tècnic,OU=Equips,OU=MusicCloud,DC=musiccloud,DC=local
+
+
+CORRECTE: 6 OU de departaments a Usuaris
+CORRECTE: 6 OU de departaments a Equips
+CORRECTE: 17 OU de MusicCloud sense duplicats, mateixos GUID
+ESTAT FINAL
+[
+    {
+        "Name":  "Administració",
+        "DistinguishedName":  "OU=Administració,OU=Equips,OU=MusicCloud,DC=musiccloud,DC=local",
+        "GUID":  "07b6dda4-5286-48dc-a665-db6b3e66335b"
+    },
+    {
+        "Name":  "Administració",
+        "DistinguishedName":  "OU=Administració,OU=Usuaris,OU=MusicCloud,DC=musiccloud,DC=local",
+        "GUID":  "35d8add1-f659-47ab-81b6-34a8a8799af8"
+    },
+    {
+        "Name":  "Comptes_Servei",
+        "DistinguishedName":  "OU=Comptes_Servei,OU=MusicCloud,DC=musiccloud,DC=local",
+        "GUID":  "2175478c-359b-4081-8d3e-8bf4879b4858"
+    },
+    {
+        "Name":  "Direcció",
+        "DistinguishedName":  "OU=Direcció,OU=Equips,OU=MusicCloud,DC=musiccloud,DC=local",
+        "GUID":  "01952c58-a879-46e2-83c6-0a296589c8f6"
+    },
+    {
+        "Name":  "Direcció",
+        "DistinguishedName":  "OU=Direcció,OU=Usuaris,OU=MusicCloud,DC=musiccloud,DC=local",
+        "GUID":  "ad346a88-3d18-4e6d-b044-3c752bfab2fa"
+    },
+    {
+        "Name":  "Equips",
+        "DistinguishedName":  "OU=Equips,OU=MusicCloud,DC=musiccloud,DC=local",
+        "GUID":  "0b816472-c140-4231-a2bf-a469decbb943"
+    },
+    {
+        "Name":  "Externs",
+        "DistinguishedName":  "OU=Externs,OU=Equips,OU=MusicCloud,DC=musiccloud,DC=local",
+        "GUID":  "25de9c8f-12c0-414d-bdd3-1fffe229e534"
+    },
+    {
+        "Name":  "Externs",
+        "DistinguishedName":  "OU=Externs,OU=Usuaris,OU=MusicCloud,DC=musiccloud,DC=local",
+        "GUID":  "785494d3-a49a-485a-8bde-4f9e9b723a7e"
+    },
+    {
+        "Name":  "Grups",
+        "DistinguishedName":  "OU=Grups,OU=MusicCloud,DC=musiccloud,DC=local",
+        "GUID":  "e3346917-d2a9-47ac-9d06-9bb4297f9112"
+    },
+    {
+        "Name":  "Informàtica",
+        "DistinguishedName":  "OU=Informàtica,OU=Equips,OU=MusicCloud,DC=musiccloud,DC=local",
+        "GUID":  "4264cd27-1e9f-403f-955e-ada5eab85fd7"
+    },
+    {
+        "Name":  "Informàtica",
+        "DistinguishedName":  "OU=Informàtica,OU=Usuaris,OU=MusicCloud,DC=musiccloud,DC=local",
+        "GUID":  "ca212737-90f4-4d31-b040-3dcd3bc913be"
+    },
+    {
+        "Name":  "MusicCloud",
+        "DistinguishedName":  "OU=MusicCloud,DC=musiccloud,DC=local",
+        "GUID":  "6209fac5-3b0d-44d1-9c6a-39e600a126c5"
+    },
+    {
+        "Name":  "Producció Musical",
+        "DistinguishedName":  "OU=Producció Musical,OU=Equips,OU=MusicCloud,DC=musiccloud,DC=local",
+        "GUID":  "eb08a6de-ddff-4566-a9d3-927c15d3c491"
+    },
+    {
+        "Name":  "Producció Musical",
+        "DistinguishedName":  "OU=Producció Musical,OU=Usuaris,OU=MusicCloud,DC=musiccloud,DC=local",
+        "GUID":  "0f1044f3-78c0-4f28-b404-84dac316d4d1"
+    },
+    {
+        "Name":  "Suport Tècnic",
+        "DistinguishedName":  "OU=Suport Tècnic,OU=Equips,OU=MusicCloud,DC=musiccloud,DC=local",
+        "GUID":  "d999dda6-9b6d-4406-b885-83bd8f4d598b"
+    },
+    {
+        "Name":  "Suport Tècnic",
+        "DistinguishedName":  "OU=Suport Tècnic,OU=Usuaris,OU=MusicCloud,DC=musiccloud,DC=local",
+        "GUID":  "1832c245-b187-4bd4-84c6-9f0a93ca7d2b"
+    },
+    {
+        "Name":  "Usuaris",
+        "DistinguishedName":  "OU=Usuaris,OU=MusicCloud,DC=musiccloud,DC=local",
+        "GUID":  "6c1b0090-05d6-40c8-bc33-f0cecf3c9b88"
+    }
+]
+SINTAXI WINDOWS POWERSHELL 5.1
+CORRECTE: els 7 scripts passen el parser de Windows PowerShell 5.1

@@ -1,0 +1,16 @@
+2026-10-29 16:13:22 +01:00
+OU creada: Grups
+
+Name  DistinguishedName
+----  -----------------
+Grups OU=Grups,OU=MusicCloud,DC=musiccloud,DC=local
+
+
+L'OU ja existeix: Grups
+
+Name  DistinguishedName
+----  -----------------
+Grups OU=Grups,OU=MusicCloud,DC=musiccloud,DC=local
+
+
+Comprovacio correcta: mateix GUID amb els parametres en ordre invers

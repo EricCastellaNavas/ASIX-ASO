@@ -1,0 +1,12 @@
+
+OU creada: MusicCloud
+Name                     Length
+----                     ------
+01-OU-fixa.ps1              447
+02-OU-nom-variable.ps1      536
+03-OU-nom-i-ruta.ps1        542
+04-OU-parametres.ps1        567
+05-OU-nom-obligatori.ps1    501
+06-OU-comprovacions.ps1     956
+07-OU-departaments.ps1     1669
+MusicCloud

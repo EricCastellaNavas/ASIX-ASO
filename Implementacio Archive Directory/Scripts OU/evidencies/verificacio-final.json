@@ -1,0 +1,55 @@
+{
+    "Data":  "2026-10-29 16:16:49 +01:00",
+    "Servidor":  "SRV-AD-01",
+    "Domini":  "musiccloud.local",
+    "PowerShell":  "5.1.20348.558",
+    "RutaScripts":  "C:\\ASO\\Scripts-OU",
+    "NombreOU":  17,
+    "TotesProtegides":  true,
+    "Usuaris":  [
+                    "Administració",
+                    "Direcció",
+                    "Externs",
+                    "Informàtica",
+                    "Producció Musical",
+                    "Suport Tècnic"
+                ],
+    "Equips":  [
+                   "Administració",
+                   "Direcció",
+                   "Externs",
+                   "Informàtica",
+                   "Producció Musical",
+                   "Suport Tècnic"
+               ],
+    "Fitxers":  [
+                    {
+                        "Nom":  "01-OU-fixa.ps1",
+                        "SHA256":  "64404B340FA33F14CF59206F3FC8F378BFA82D382CF5BC672AA3D3AAF7FD38CA"
+                    },
+                    {
+                        "Nom":  "02-OU-nom-variable.ps1",
+                        "SHA256":  "516380763C791EA644F0872958E7A0EE267E48089986A931671E1DE69258C76E"
+                    },
+                    {
+                        "Nom":  "03-OU-nom-i-ruta.ps1",
+                        "SHA256":  "351F59847470017DD8EAC01BD295539512D9D3B1D6476FEB1A71365FFB08C8F8"
+                    },
+                    {
+                        "Nom":  "04-OU-parametres.ps1",
+                        "SHA256":  "675D4478398589394B39683190D5D0F1B2532EB7D50669DFA966BB8BF4771A68"
+                    },
+                    {
+                        "Nom":  "05-OU-nom-obligatori.ps1",
+                        "SHA256":  "80F186EEF9E0940A30D004D15251CB5537615F51389A1FB31E5E28522B76325F"
+                    },
+                    {
+                        "Nom":  "06-OU-comprovacions.ps1",
+                        "SHA256":  "9465BD0A7F825650200F240355D00E4B37B32F20F8090380733F7900659A4FA8"
+                    },
+                    {
+                        "Nom":  "07-OU-departaments.ps1",
+                        "SHA256":  "F42DA4DC53F186154A7F561A00605BCD6D128339617374ED552FBDF17678969C"
+                    }
+                ]
+}

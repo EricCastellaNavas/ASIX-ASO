@@ -1,0 +1,43 @@
+2026-10-29 16:16:05 +01:00
+OU creada: Prova, O'Brien c691653a
+Creat: Direcció
+Creat: Administració
+Creat: Suport Tècnic
+Creat: Producció Musical
+Creat: Informàtica
+Creat: Externs
+
+Name                    DistinguishedName
+----                    -----------------
+Prova, O'Brien c691653a OU=Prova\, O'Brien c691653a,OU=MusicCloud,DC=musiccloud,DC=local
+Administració           OU=Administració,OU=Prova\, O'Brien c691653a,OU=MusicCloud,DC=musicclou...
+Direcció                OU=Direcció,OU=Prova\, O'Brien c691653a,OU=MusicCloud,DC=musiccloud,DC=...
+Externs                 OU=Externs,OU=Prova\, O'Brien c691653a,OU=MusicCloud,DC=musiccloud,DC=l...
+Informàtica             OU=Informàtica,OU=Prova\, O'Brien c691653a,OU=MusicCloud,DC=musiccloud,...
+Producció Musical       OU=Producció Musical,OU=Prova\, O'Brien c691653a,OU=MusicCloud,DC=music...
+Suport Tècnic           OU=Suport Tècnic,OU=Prova\, O'Brien c691653a,OU=MusicCloud,DC=musicclou...
+
+
+L'OU ja existeix: Prova, O'Brien c691653a
+Ja existeix: Direcció
+Ja existeix: Administració
+Ja existeix: Suport Tècnic
+Ja existeix: Producció Musical
+Ja existeix: Informàtica
+Ja existeix: Externs
+
+Name                    DistinguishedName
+----                    -----------------
+Prova, O'Brien c691653a OU=Prova\, O'Brien c691653a,OU=MusicCloud,DC=musiccloud,DC=local
+Administració           OU=Administració,OU=Prova\, O'Brien c691653a,OU=MusicCloud,DC=musicclou...
+Direcció                OU=Direcció,OU=Prova\, O'Brien c691653a,OU=MusicCloud,DC=musiccloud,DC=...
+Externs                 OU=Externs,OU=Prova\, O'Brien c691653a,OU=MusicCloud,DC=musiccloud,DC=l...
+Informàtica             OU=Informàtica,OU=Prova\, O'Brien c691653a,OU=MusicCloud,DC=musiccloud,...
+Producció Musical       OU=Producció Musical,OU=Prova\, O'Brien c691653a,OU=MusicCloud,DC=music...
+Suport Tècnic           OU=Suport Tècnic,OU=Prova\, O'Brien c691653a,OU=MusicCloud,DC=musicclou...
+
+
+CORRECTE: el script 7 crea pare i departaments des de zero
+CORRECTE: nom amb coma, apostrof i espais; mateixa OU en repetir
+CORRECTE: eliminada nomes la branca temporal creada per aquesta prova
+CORRECTE: 17 OU definitives, totes protegides contra eliminacio accidental

@@ -1,0 +1,16 @@
+2026-10-29 16:12:33 +01:00
+OU creada: Equips
+
+Name   DistinguishedName
+----   -----------------
+Equips OU=Equips,OU=MusicCloud,DC=musiccloud,DC=local
+
+
+L'OU ja existeix: Equips
+
+Name   DistinguishedName
+----   -----------------
+Equips OU=Equips,OU=MusicCloud,DC=musiccloud,DC=local
+
+
+Comprovacio correcta: OU=Equips,OU=MusicCloud,DC=musiccloud,DC=local
