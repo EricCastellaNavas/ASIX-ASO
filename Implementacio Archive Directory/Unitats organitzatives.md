@@ -262,3 +262,10 @@ La comprovació del contingut utilitza `Get-ADObject`, `-Filter`,
 No he executat l’eliminació sobre MusicCloud: l’he provat en una branca temporal.
 Si s’executa sobre l’estructura actual, també pot eliminar les UO reutilitzades
 que pertanyen a la llista i estan buides; conservarà les que encara tinguin objectes.
+
+#### 7.2. Creació de la UO principal
+
+Fitxer: [UO-7.2-Principal.ps1](<Scripts OU/UO-7.2-Principal.ps1>)
+
+Comprova si MusicCloud existeix a l’arrel del domini. Si no existeix, la crea;
+si ja hi és, la conserva.
