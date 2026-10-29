@@ -1,61 +1,53 @@
 ﻿param (
     [Parameter(Mandatory=$true)]
-    [ValidateScript({ -not [string]::IsNullOrWhiteSpace($_) })]
     [string]$nomOU,
 
-    [ValidateScript({ -not [string]::IsNullOrWhiteSpace($_) })]
     [string]$ruta = "DC=musiccloud,DC=local"
 )
 
-$ErrorActionPreference = "Stop"
-Import-Module ActiveDirectory
-
-# La ruta pot ser el domini o una OU.
 try {
-    $pare = Get-ADObject -Identity $ruta
+    $pare = Get-ADObject -Identity $ruta -ErrorAction Stop
 }
 catch {
-    throw "No he pogut consultar la ruta '$ruta': $($_.Exception.Message)"
+    Write-Host "No existeix la ruta o no es pot consultar: $ruta"
+    exit
 }
 
-if ($pare.ObjectClass -notin @("domainDNS", "organizationalUnit")) {
-    throw "La ruta ha de ser el domini o una OU."
+try {
+    $OU = Get-ADOrganizationalUnit -Identity "OU=$nomOU,$ruta" -ErrorAction Stop
 }
-
-$ruta = $pare.DistinguishedName
-$OU = Get-ADOrganizationalUnit -Filter { Name -eq $nomOU } `
-    -SearchBase $ruta -SearchScope OneLevel
+catch {
+    $OU = $null
+}
 
 if (-not $OU) {
-    $OU = New-ADOrganizationalUnit -Name $nomOU -Path $ruta -PassThru
-    Write-Host "OU creada: $nomOU"
+    try {
+        New-ADOrganizationalUnit -Name $nomOU -Path $ruta -ErrorAction Stop
+    }
+    catch {
+        Write-Host "No s'ha pogut crear l'OU: $nomOU"
+        exit
+    }
 }
 else {
     Write-Host "L'OU ja existeix: $nomOU"
 }
 
-$departaments = @(
-    "Direcció",
-    "Administració",
-    "Suport Tècnic",
-    "Producció Musical",
-    "Informàtica",
-    "Externs"
-)
+$rutaOU = "OU=$nomOU,$ruta"
+$departaments = @("Direcció", "Administració", "Suport Tècnic", "Producció Musical", "Informàtica", "Externs")
 
 foreach ($departament in $departaments) {
-    $ouDepartament = Get-ADOrganizationalUnit -Filter { Name -eq $departament } `
-        -SearchBase $OU.DistinguishedName -SearchScope OneLevel
+    try {
+        $ouDepartament = Get-ADOrganizationalUnit -Identity "OU=$departament,$rutaOU" -ErrorAction Stop
+    }
+    catch {
+        $ouDepartament = $null
+    }
 
     if (-not $ouDepartament) {
-        New-ADOrganizationalUnit -Name $departament -Path $OU.DistinguishedName
-        Write-Host "Creat: $departament"
+        New-ADOrganizationalUnit -Name $departament -Path $rutaOU -ErrorAction Stop
     }
     else {
-        Write-Host "Ja existeix: $departament"
+        Write-Host "L'OU ja existeix: $departament"
     }
 }
-
-$OU | Select-Object Name, DistinguishedName
-Get-ADOrganizationalUnit -Filter * -SearchBase $OU.DistinguishedName `
-    -SearchScope OneLevel | Sort-Object Name | Select-Object Name, DistinguishedName

@@ -1,37 +1,28 @@
 ﻿param (
     [Parameter(Mandatory=$true)]
-    [ValidateScript({ -not [string]::IsNullOrWhiteSpace($_) })]
     [string]$nomOU,
 
-    [ValidateScript({ -not [string]::IsNullOrWhiteSpace($_) })]
     [string]$ruta = "DC=musiccloud,DC=local"
 )
 
-$ErrorActionPreference = "Stop"
-Import-Module ActiveDirectory
-
-# La ruta pot ser el domini o una OU.
 try {
-    $pare = Get-ADObject -Identity $ruta
+    $pare = Get-ADObject -Identity $ruta -ErrorAction Stop
 }
 catch {
-    throw "No he pogut consultar la ruta '$ruta': $($_.Exception.Message)"
+    Write-Host "No existeix la ruta o no es pot consultar: $ruta"
+    exit
 }
 
-if ($pare.ObjectClass -notin @("domainDNS", "organizationalUnit")) {
-    throw "La ruta ha de ser el domini o una OU."
+try {
+    $OU = Get-ADOrganizationalUnit -Identity "OU=$nomOU,$ruta" -ErrorAction Stop
 }
-
-$ruta = $pare.DistinguishedName
-$OU = Get-ADOrganizationalUnit -Filter { Name -eq $nomOU } `
-    -SearchBase $ruta -SearchScope OneLevel
+catch {
+    $OU = $null
+}
 
 if (-not $OU) {
-    $OU = New-ADOrganizationalUnit -Name $nomOU -Path $ruta -PassThru
-    Write-Host "OU creada: $nomOU"
+    New-ADOrganizationalUnit -Name $nomOU -Path $ruta -ErrorAction Stop
 }
 else {
     Write-Host "L'OU ja existeix: $nomOU"
 }
-
-$OU | Select-Object Name, DistinguishedName

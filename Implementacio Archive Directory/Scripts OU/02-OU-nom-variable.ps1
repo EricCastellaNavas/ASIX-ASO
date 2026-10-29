@@ -1,22 +1,16 @@
-﻿$ErrorActionPreference = "Stop"
-Import-Module ActiveDirectory
-
-if ($args.Count -ne 1) {
-    throw 'Us: .\02-OU-nom-variable.ps1 "Usuaris"'
-}
-
-$nomOU = $args[0]
+﻿$nomOU = $args[0]
 $ruta = "OU=MusicCloud,DC=musiccloud,DC=local"
 
-$OU = Get-ADOrganizationalUnit -Filter { Name -eq $nomOU } `
-    -SearchBase $ruta -SearchScope OneLevel
+try {
+    $OU = Get-ADOrganizationalUnit -Identity "OU=$nomOU,$ruta" -ErrorAction Stop
+}
+catch {
+    $OU = $null
+}
 
 if (-not $OU) {
-    $OU = New-ADOrganizationalUnit -Name $nomOU -Path $ruta -PassThru
-    Write-Host "OU creada: $nomOU"
+    New-ADOrganizationalUnit -Name $nomOU -Path $ruta -ErrorAction Stop
 }
 else {
     Write-Host "L'OU ja existeix: $nomOU"
 }
-
-$OU | Select-Object Name, DistinguishedName
